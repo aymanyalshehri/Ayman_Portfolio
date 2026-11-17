@@ -138,60 +138,60 @@ function HeroSection() {
   const analysisWorkflowCards = [
     {
       step: "01",
-      phase: "Data Cleaning",
-      value: "100%",
-      label: "بيانات موثوقة ومحققة",
-      icon: Database,
+      phase: "Academic Degree",
+      value: "MIS",
+      label: "بكالوريوس نظم معلومات إدارية",
+      icon: GraduationCap,
       color: "#00d9ff",
       bgGlow: "from-cyan-500/10 via-cyan-500/5 to-transparent",
       borderGlow: "group-hover:border-cyan-400/60",
     },
     {
       step: "02",
-      phase: "Saudi Climate",
-      value: "12",
-      label: "مدينة سعودية محللة",
-      icon: Workflow,
+      phase: "Verified Training",
+      value: "185+",
+      label: "ساعة تدريب مهني معتمد",
+      icon: Award,
       color: "#8757ff",
       bgGlow: "from-purple-500/10 via-purple-500/5 to-transparent",
       borderGlow: "group-hover:border-purple-400/60",
     },
     {
       step: "03",
-      phase: "Retail Sales",
-      value: "3.24M",
-      label: "ر.س مبيعات ومؤشرات",
-      icon: BrainCircuit,
+      phase: "BI & Analytics",
+      value: `${projects.length}+`,
+      label: "مشاريع تحليلية تطبيقية",
+      icon: BarChart3,
       color: "#5fffd2",
       bgGlow: "from-emerald-500/10 via-emerald-500/5 to-transparent",
       borderGlow: "group-hover:border-emerald-400/60",
     },
     {
       step: "04",
-      phase: "Power BI Models",
-      value: "6",
-      label: "لوحات تحكم متكاملة",
-      icon: BarChart3,
+      phase: "Technical Stack",
+      value: `${skills.length}+`,
+      label: "مهارة وأداة تقنية متقنة",
+      icon: Database,
       color: "#fbbf24",
       bgGlow: "from-amber-500/10 via-amber-500/5 to-transparent",
       borderGlow: "group-hover:border-amber-400/60",
     },
     {
       step: "05",
-      phase: "Ad Performance",
-      value: "4.35x",
-      label: "متوسط عائد ROAS",
-      icon: LineChart,
+      phase: "Field Experience",
+      value: `${experiences.length}`,
+      label: "جهات خبرة وتدريب ميداني",
+      icon: Workflow,
       color: "#38bdf8",
       bgGlow: "from-sky-500/10 via-sky-500/5 to-transparent",
       borderGlow: "group-hover:border-sky-400/60",
     },
     {
       step: "06",
-      phase: "Certs & Skills",
+      phase: "Professional Certs",
       value: `${certifications.length}`,
       label: "شهادات مهنية معتمدة",
-      icon: Award,
+      icon: Sparkles,
       color: "#f43f5e",
       bgGlow: "from-rose-500/10 via-rose-500/5 to-transparent",
       borderGlow: "group-hover:border-rose-400/60",
@@ -236,7 +236,7 @@ function HeroSection() {
           </div>
           <span className="text-[0.65rem] text-slate-400">Power BI</span>
         </div>
-        <p className="text-sm font-extrabold text-white">12 مدينة • 6 سنوات مناخية</p>
+        <p className="text-sm font-extrabold text-white">Power BI • SQL • Excel</p>
         
         {/* Mini SVG Sparkline */}
         <div className="flex items-end gap-1.5 h-8 pt-1">
@@ -259,9 +259,9 @@ function HeroSection() {
             </span>
             <span>BI Performance</span>
           </div>
-          <span className="text-[0.65rem] text-purple-300 font-bold">4.35x</span>
+          <span className="text-[0.65rem] text-purple-300 font-bold">MIS B.Sc.</span>
         </div>
-        <p className="text-sm font-extrabold text-white">متوسط ROAS الإعلاني</p>
+        <p className="text-sm font-extrabold text-white">جاهزية مهنية فورية</p>
         
         {/* Mini Progress Bar */}
         <div className="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden mt-1">
@@ -375,7 +375,7 @@ function HeroSection() {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const aboutTags = [
-  "المدينة المنورة، السعودية",
+  "المملكة العربية السعودية",
   "جامعة طيبة — نظم المعلومات الإدارية",
   "Power BI",
   "DAX المتقدم",
@@ -750,7 +750,7 @@ function EducationSection() {
               {education[0]?.degree || "بكالوريوس نظم المعلومات الإدارية (MIS)"}
             </h3>
             <p className="text-sm sm:text-base text-slate-300">
-              {education[0]?.school || "جامعة طيبة — كلية إدارة الأعمال، المدينة المنورة"}
+              {education[0]?.school || "جامعة طيبة — كلية إدارة الأعمال"}
             </p>
             <p className="text-xs text-slate-400">
               {education[0]?.details || "تخصص يجمع بين علوم الحاسب ونظم المعلومات وإدارة الأعمال والتحليل المؤسسي، والتركيز على قواعد البيانات ونمذجة العمليات ودعم اتخاذ القرار."}
@@ -824,7 +824,7 @@ function ContactSection() {
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto leading-relaxed">
-            متاح لفرص العمل في تحليل البيانات وذكاء الأعمال ونظم المعلومات الإدارية. مقيم بالمدينة المنورة ومستعد للعمل عن بُعد وحضورياً لكافة مناطق المملكة.
+            متاح فوراً لفرص العمل في تحليل البيانات وذكاء الأعمال ونظم المعلومات الإدارية، ومستعد للعمل حضورياً وعن بُعد في كافة مناطق المملكة.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 pt-4">

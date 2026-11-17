@@ -94,7 +94,7 @@ export default function ContactPage() {
     {
       icon: MapPin,
       label: "الموقع الجغرافي والجاهزية",
-      value: `${profile.location} (مستعد للعمل عن بُعد وحضورياً)`,
+      value: "متاح للعمل في جميع مناطق المملكة (حضورياً وعن بُعد)",
       href: "#",
       color: "text-cyan-400",
       glow: "hover:border-cyan-400/50",
@@ -141,7 +141,7 @@ export default function ContactPage() {
             <div className="p-4 rounded-2xl border border-emerald-400/30 bg-slate-900/80 backdrop-blur-xl shadow-lg hover:border-emerald-400/60 transition">
               <Globe className="h-5 w-5 text-emerald-400 mb-1" />
               <span className="block text-sm font-extrabold text-white">عن بُعد وحضوري</span>
-              <span className="text-xs font-mono text-slate-400">المدينة المنورة والمملكة</span>
+              <span className="text-xs font-mono text-slate-400">جميع مناطق المملكة</span>
             </div>
             <div className="p-4 rounded-2xl border border-amber-400/30 bg-slate-900/80 backdrop-blur-xl shadow-lg hover:border-amber-400/60 transition">
               <Mail className="h-5 w-5 text-amber-400 mb-1" />

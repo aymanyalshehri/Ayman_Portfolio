@@ -176,12 +176,12 @@ export function AboutPageClient() {
             <div className="p-4 rounded-2xl border border-teal-400/30 bg-[#121826]/80 backdrop-blur-xl flex flex-col items-center text-center shadow-lg hover:border-teal-400/60 transition-all">
               <GraduationCap className="h-6 w-6 text-teal-400 mb-1" />
               <span className="text-xl font-bold text-white font-mono">MIS B.Sc.</span>
-              <span className="text-xs text-slate-400 mt-0.5">جامعة طيبة</span>
+              <span className="text-xs text-slate-400 mt-0.5">نظم المعلومات الإدارية</span>
             </div>
             <div className="p-4 rounded-2xl border border-purple-400/30 bg-[#121826]/80 backdrop-blur-xl flex flex-col items-center text-center shadow-lg hover:border-purple-400/60 transition-all">
-              <BarChart3 className="h-6 w-6 text-purple-400 mb-1" />
-              <span className="text-xl font-bold text-white font-mono">6+ Dashboards</span>
-              <span className="text-xs text-slate-400 mt-0.5">Power BI متقدم</span>
+              <Database className="h-6 w-6 text-purple-400 mb-1" />
+              <span className="text-xl font-bold text-white font-mono">Power BI &amp; SQL</span>
+              <span className="text-xs text-slate-400 mt-0.5">تحليل ونمذجة البيانات</span>
             </div>
             <div className="p-4 rounded-2xl border border-amber-400/30 bg-[#121826]/80 backdrop-blur-xl flex flex-col items-center text-center shadow-lg hover:border-amber-400/60 transition-all">
               <Award className="h-6 w-6 text-amber-400 mb-1" />
@@ -189,9 +189,9 @@ export function AboutPageClient() {
               <span className="text-xs text-slate-400 mt-0.5">تدريب مهني معتمد</span>
             </div>
             <div className="p-4 rounded-2xl border border-rose-400/30 bg-[#121826]/80 backdrop-blur-xl flex flex-col items-center text-center shadow-lg hover:border-rose-400/60 transition-all">
-              <MapPin className="h-6 w-6 text-rose-400 mb-1" />
-              <span className="text-lg font-bold text-white">المدينة المنورة</span>
-              <span className="text-xs text-slate-400 mt-0.5">المملكة العربية السعودية</span>
+              <UserCheck className="h-6 w-6 text-rose-400 mb-1" />
+              <span className="text-lg font-bold text-white">متاح فوراً للتوظيف</span>
+              <span className="text-xs text-slate-400 mt-0.5">جميع مناطق المملكة</span>
             </div>
           </div>
 
@@ -267,7 +267,7 @@ export function AboutPageClient() {
                 </div>
                 <div className="flex items-center gap-2 text-slate-300">
                   <CheckCircle2 className="h-4 w-4 text-teal-400 flex-shrink-0" />
-                  <span>الجامعة: جامعة طيبة — المدينة المنورة</span>
+                  <span>الجامعة: جامعة طيبة</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-300">
                   <CheckCircle2 className="h-4 w-4 text-teal-400 flex-shrink-0" />

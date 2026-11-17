@@ -81,26 +81,26 @@ export default function ProjectsPage() {
           <div className="p-5 rounded-2xl border border-purple-400/30 bg-[#121826]/80 backdrop-blur-xl shadow-lg flex flex-col justify-between hover:border-purple-400/60 transition">
             <div className="flex items-center justify-between">
               <span className="font-mono text-[0.68rem] uppercase font-bold tracking-wider text-purple-300">
-                لوحة الطقس
+                قطاعات الأعمال
               </span>
-              <CloudSun className="h-4 w-4 text-purple-300" />
+              <Layers className="h-4 w-4 text-purple-300" />
             </div>
             <div className="mt-3">
-              <span className="text-3xl font-black text-white font-mono">4</span>
-              <span className="block text-xs text-slate-400 mt-0.5">صفحات تحليلية متصلة</span>
+              <span className="text-3xl font-black text-white font-mono">8</span>
+              <span className="block text-xs text-slate-400 mt-0.5">مجالات تشغيلية وتجارية</span>
             </div>
           </div>
 
           <div className="p-5 rounded-2xl border border-amber-400/30 bg-[#121826]/80 backdrop-blur-xl shadow-lg flex flex-col justify-between hover:border-amber-400/60 transition">
             <div className="flex items-center justify-between">
               <span className="font-mono text-[0.68rem] uppercase font-bold tracking-wider text-amber-300">
-                المدن المغطاة
+                التدريب المهني
               </span>
-              <Layers className="h-4 w-4 text-amber-300" />
+              <Sparkles className="h-4 w-4 text-amber-300" />
             </div>
             <div className="mt-3">
-              <span className="text-3xl font-black text-white font-mono">12</span>
-              <span className="block text-xs text-slate-400 mt-0.5">مدينة سعودية (2021–2026)</span>
+              <span className="text-3xl font-black text-white font-mono">185+</span>
+              <span className="block text-xs text-slate-400 mt-0.5">ساعة تدريب تحليل بيانات</span>
             </div>
           </div>
 

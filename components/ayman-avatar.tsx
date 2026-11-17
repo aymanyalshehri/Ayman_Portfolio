@@ -88,7 +88,7 @@ export function AymanExecutiveIdentityCard() {
           <span>متاح للفرص المهنية</span>
         </span>
         <span className="text-[0.7rem] font-mono font-medium text-teal-300 bg-slate-950/80 px-3 py-1 rounded-full border border-teal-400/30 backdrop-blur-md">
-          المدينة المنورة
+          MIS · Data Analyst
         </span>
       </div>
 
