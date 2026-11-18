@@ -25,6 +25,7 @@ import { GsapEffects } from "@/components/gsap-effects";
 import { MagneticButton } from "@/components/magnetic-button";
 import { PageVideoShell } from "@/components/page-video-shell";
 import { Preloader } from "@/components/preloader";
+import { ProjectCard } from "@/components/project-card";
 import {
   certifications,
   education,
@@ -456,7 +457,7 @@ function AboutSection() {
 // SECTION 3 — FEATURED PROJECTS  (Portfolio proof grid)
 // ═══════════════════════════════════════════════════════════════════════════════
 
-const featuredProjects = projects.slice(0, 6);
+const featuredProjects = projects;
 
 function ProjectsSection() {
   return (
@@ -472,65 +473,17 @@ function ProjectsSection() {
               <GradientTitle>أبرز مشاريع ولوحات التحكم</GradientTitle>
             </h2>
             <p className="mt-3 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-              لوحات تفاعلية معتمدة في Power BI مبنية على بيانات تشغيلية واقعية، مع مقاييس DAX متقدمة ونمذجة نجمية Star Schema.
+              لوحات تفاعلية معتمدة في Power BI مبنية على بيانات تشغيلية واقعية، توضح المشكلة والحل التحليلي والقيمة المباشرة لمتخذ القرار. اضغط على أي لوحة أو تصفح صفحاتها المصغّرة بالأسفل.
             </p>
           </div>
-          <MagneticButton href="/projects">كافة دراسات الحالة ←</MagneticButton>
+          <MagneticButton href="/projects">كافة دراسات الحالة ({projects.length}) ←</MagneticButton>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {featuredProjects.map((p) => (
-            <Link
-              key={p.slug}
-              href={`/projects/${p.slug}`}
-              className="proj-animate flex flex-col h-full rounded-2xl border border-white/10 bg-slate-900/70 backdrop-blur-xl overflow-hidden hover:border-cyan-400/40 hover:-translate-y-1.5 transition-all duration-300 shadow-xl group"
-            >
-              <div className="flex flex-col flex-1 p-6">
-                {/* Category tag */}
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="rounded-md border border-cyan-400/30 bg-cyan-400/10 px-2.5 py-1 text-xs font-mono font-bold uppercase tracking-wider text-cyan-300">
-                    {p.category}
-                  </span>
-                  <span className="text-slate-400 text-xs font-mono group-hover:text-cyan-300 group-hover:translate-x-1 transition-all">
-                    عرض المشروع ←
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
-                  {p.title}
-                </h3>
-
-                {/* Summary */}
-                <p className="mt-3 text-xs sm:text-sm text-slate-300 line-clamp-3 leading-relaxed flex-1">
-                  {p.summary}
-                </p>
-
-                {/* Metrics */}
-                <div className="mt-5 pt-4 border-t border-white/10 flex flex-wrap gap-2">
-                  {p.metrics.slice(0, 2).map((m, idx) => (
-                    <span
-                      key={idx}
-                      className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-[0.72rem] font-semibold text-emerald-300"
-                    >
-                      {typeof m === "string" ? m : `${m.label}: ${m.value}`}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Tools */}
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {p.technologies.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 text-[0.68rem] font-mono text-slate-300"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Link>
+          {featuredProjects.map((p, idx) => (
+            <div key={p.slug} className="proj-animate h-full">
+              <ProjectCard project={p} index={idx} />
+            </div>
           ))}
         </div>
       </div>

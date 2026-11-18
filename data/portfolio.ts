@@ -36,15 +36,15 @@ export const profile = {
   location: "المملكة العربية السعودية",
   locationEn: "Saudi Arabia",
   linkedin: "https://www.linkedin.com/in/ayman-yahya-alshehri",
-  github: "https://github.com/ayman-alshehri",
-  resumeUrl: "#",
-  avatar: "/ayman/ayman-avatar.svg",
+  github: "https://github.com/aymanyalshehri",
+  resumeUrl: "/resume",
+  avatar: "/ayman/ayman-photo.jpg",
 };
 
 export const stats = [
-  { value: "8+", label: "مشاريع معروضة · Dashboards" },
-  { value: "10+", label: "أدوات تقنية · Tech Tools" },
-  { value: "185+", label: "ساعات تدريب معتمد · Training Hours" },
+  { value: "12+", label: "لوحة تحكم احترافية · Dashboards" },
+  { value: "10+", label: "أدوات تقنية متقنة · Tech Tools" },
+  { value: "185+", label: "ساعة تدريب معتمد · Training Hours" },
   { value: "3", label: "شهادات مهنية معتمدة · Certifications" },
 ];
 
@@ -152,24 +152,26 @@ export const philosophy = [
 
 export type ProjectCategory =
   | "الكل"
+  | "تجزئة وتجارة إلكترونية"
+  | "إدارة مرافق وعمليات"
+  | "تحليلات العملاء"
   | "فنادق وسياحة"
-  | "إدارة مرافق"
-  | "الطقس"
-  | "تجزئة"
   | "موارد بشرية"
   | "تحليل مبيعات"
   | "إعلانات رقمية"
+  | "الطقس"
   | "قطاع صحي";
 
 export const projectCategories: ProjectCategory[] = [
   "الكل",
+  "تجزئة وتجارة إلكترونية",
+  "إدارة مرافق وعمليات",
+  "تحليلات العملاء",
   "فنادق وسياحة",
-  "إدارة مرافق",
-  "الطقس",
-  "تجزئة",
   "موارد بشرية",
   "تحليل مبيعات",
   "إعلانات رقمية",
+  "الطقس",
   "قطاع صحي",
 ];
 
@@ -198,6 +200,137 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "retail-branches-targets-discounts-analytics",
+    title: "منظومة تحليل مبيعات التجزئة والفروع والخصومات · Retail Branches, Discounts & Channels Analytics",
+    category: "تجزئة وتجارة إلكترونية",
+    accent: "teal",
+    summary:
+      "منظومة Power BI تنفيذية من 4 صفحات مترابطة تتابع صافي مبيعات 9.77M ر.س وصافي ربح 2.80M ر.س (هامش 28.6%) عبر 10 فروع، وتكشف للمدير مباشرة أثر الخصومات والمرتجعات على تحقيق المستهدف السنوي (97.4%).",
+    problem:
+      "عدم وضوح أثر الخصومات العالية والمرتجعات (3.9%) على تآكل هامش الربح رغم ارتفاع المبيعات في مواسم الذروة مثل نوفمبر، وصعوبة مقارنة تحقيق الأهداف بين الفروع والقنوات البيعية.",
+    approach:
+      "تصميم نموذج تحليلي من 4 صفحات: (1) النظرة العامة واتجاه المبيعات مقابل الهدف، (2) أداء الفروع والأهداف، (3) المنتجات وأثر الخصومات، (4) سلوك العملاء وقنوات البيع وطرق الدفع.",
+    result:
+      "كشف أن هامش الربح بدون خصم يبلغ 34.1% وينخفض إلى 11.2% عند خصم 25%، وتحديد فرع الرياض-العليا كأعلى فرع مبيعات (1.48M ر.س) وفرع مكة كأعلى تحقيق للمستهدف (100.1%)، مع إبراز مساهمة الفروع بـ 61% من الإيرادات.",
+    technologies: ["Power BI", "DAX", "Retail KPIs", "Discount Impact", "Branch Targets", "Star Schema"],
+    github: "https://github.com/aymanyalshehri",
+    demo: "#",
+    imageUrl: "/ayman/retail-analytics-overview.jpg",
+    gallery: [
+      "/ayman/retail-analytics-overview.jpg",
+      "/ayman/retail-analytics-branches.jpg",
+      "/ayman/retail-analytics-products.jpg",
+      "/ayman/retail-analytics-channels.jpg",
+    ],
+    metrics: [
+      { value: "9.77M ر.س", label: "صافي المبيعات" },
+      { value: "2.80M ر.س", label: "صافي الربح (28.6%)" },
+      { value: "97.4%", label: "تحقيق المستهدف" },
+      { value: "4 صفحات", label: "تحليلية مترابطة" },
+    ],
+    dataset: "بيانات مبيعات تجزئة (2024–2025) لـ 8,080 طلباً و1,197 عميلاً نشطاً عبر 10 فروع و3 قنوات بيع و5 طرق دفع.",
+    preprocessing: "تنظيف سجلات الفواتير والمرتجعات في Power Query، وربط جداول الأهداف الشهرية ومستويات الخصم لكل منتج وفرع.",
+    architecture: "نموذج نجمي (Star Schema) يربط الفروع والمنتجات والعملاء مع مقاييس DAX لحساب الفجوة عن الهدف قبل وبعد المرتجعات.",
+    evaluation: "التحقق من مطابقة صافي المبيعات (9,772,728 ر.س) والربح (2,796,392 ر.س) عبر الصفحات الأربع.",
+    impact: "يمكّن المدير التنفيذي ومدير المبيعات من ضبط سقف الخصومات عند 15% لحماية الهامش، ومعالجة عجز الفروع الأقل تحقيقاً للهدف (-262 ألف ر.س).",
+    challenges: "فصل أثر المرتجعات (392.5 ألف ر.س) عن إجمالي المبيعات لقياس نسبة تحقيق الهدف الفعلية (93.5% صافي مقابل 97.4% إجمالي).",
+  },
+  {
+    slug: "customer-reviews-sentiment-diagnostics-dashboard",
+    title: "لوحة تشخيص تقييمات العملاء ونقاط الضعف · Customer Reviews & Weakness Diagnostics",
+    category: "تحليلات العملاء",
+    accent: "amber",
+    summary:
+      "لوحة تشخيصية من 3 صفحات تحلل 3,050 تقييماً عبر 447 موقعاً (مطاعم، كافيهات، مولات)، وتوضح للمدير بدقة: كيف يقيم الناس؟ وماذا يمدحون أو يشتكون منه؟ وأين تتركز الأماكن الضعيفة لمعالجتها فوراً.",
+    problem:
+      "تشتت آلاف التقييمات النصية والرقمية وعدم قدرة الإدارة على تحديد السبب الجذري لانخفاض التقييم في بعض الفروع أو المناطق (هل المشكلة في السعر أم الخدمة أم الازدحام؟).",
+    approach:
+      "تقسيم التحليل إلى 3 صفحات تفاعلية: (1) الصورة العامة وخريطة الضعف جغرافياً وحسب الفئة، (2) تحليل المواضيع المتكررة في المديح والشكوى، (3) تصنيف الأماكن القوية (153 موقعاً) والضعيفة (84 موقعاً).",
+    result:
+      "متوسط تقييم عام 4.08 وصافي رضا +59.9% (75.7% تقييمات عالية مقابل 15.8% منخفضة)، مع كشف أن «الازدحام والانتظار» (-0.28) و«المواقف» (-0.14) و«الأسعار» هي أبرز مسببات الشكاوى، بينما «الأجواء» و«النظافة» تتصدر المديح.",
+    technologies: ["Power BI", "DAX", "Customer Experience (CX)", "Text & Topic Analysis", "Heatmap Matrix"],
+    github: "https://github.com/aymanyalshehri",
+    demo: "#",
+    imageUrl: "/ayman/customer-reviews-overview.jpg",
+    gallery: [
+      "/ayman/customer-reviews-overview.jpg",
+      "/ayman/customer-reviews-topics.jpg",
+      "/ayman/customer-reviews-places.png",
+    ],
+    metrics: [
+      { value: "3,050", label: "تقييم محلل" },
+      { value: "447", label: "موقعاً مشمولاً" },
+      { value: "+59.9%", label: "صافي الرضا" },
+      { value: "3 صفحات", label: "تشخيصية شاملة" },
+    ],
+    dataset: "3,050 تقييماً للعملاء موزعة على 447 موقعاً عبر 14 منطقة لثلاث فئات (كافيهات، مطاعم، مولات) مع نصوص المراجعات.",
+    preprocessing: "تصنيف نصوص التقييمات إلى 7 محاور رئيسية (الطعم، الخدمة، الأجواء، الأسعار، النظافة، الازدحام، المواقف) وحساب طول التقييم وحداثته.",
+    architecture: "مصفوفات حرارية (Heatmaps) تقارن كل محور في كل منطقة، مع مؤشرات انحراف عن المتوسط العام لتحديد نقاط الضعف باللون الأحمر.",
+    evaluation: "التحقق من العلاقة بين طول التقييم ومستوى الرضا (التقييمات الطويلة متوسطها 3.88 مقابل 4.25 للقصيرة لأن العميل يكتب بالتفصيل عند الشكوى).",
+    impact: "تمنح مدير العمليات وتجربة العميل قائمة أولويات فورية بأضعف 10 مواقع والمحور المسبب للشكوى في كل منها لتوجيه فرق التحسين.",
+    challenges: "تحويل آراء العملاء النصية إلى مؤشرات كمية قابلة للمقارنة العادلة بين الفئات والمناطق.",
+  },
+  {
+    slug: "ecommerce-profitability-delivery-analytics",
+    title: "لوحة مبيعات المتجر الإلكتروني وأثر الخصومات والتوصيل · E-Commerce Profitability & Delivery Dashboard",
+    category: "تجزئة وتجارة إلكترونية",
+    accent: "coral",
+    summary:
+      "لوحة قيادة للمتاجر الإلكترونية تتابع صافي مبيعات 2.07M ر.س وصافي ربح 680.8K ر.س (نمو +23.9%) عبر 6,000 طلب، وتكشف للمدير التركيبات الترويجية الخاسرة وأثر تأخر التوصيل على تقييم العملاء.",
+    problem:
+      "تآكل الأرباح في المواسم الترويجية نتيجة عروض خصم غير مدروسة، وارتفاع نسبة الإرجاع وتدني تقييم العملاء في بعض المناطق دون معرفة السبب اللوجستي.",
+    approach:
+      "ربط المبيعات الشهرية ومقارنة الفئات مع مصفوفة (الموسم × نسبة الخصم)، ودمج أداء قنوات البيع مع تحليل سرعة التوصيل ورضا العملاء جغرافياً.",
+    result:
+      "اكتشاف أن خصم 40% في «الجمعة البيضاء» يسبب خسارة مباشرة بهامش (-4.3% عبر 134 طلباً)، وأن تأخر التوصيل لـ 5 أيام فأكثر (19.5% من الطلبات) يخفض تقييم العميل بمقدار -0.60 نقطة، مع تصدر تطبيق الجوال بـ 43.3% من المبيعات.",
+    technologies: ["Power BI", "DAX", "E-Commerce Analytics", "Pricing & Promotions", "Logistics SLA"],
+    github: "https://github.com/aymanyalshehri",
+    demo: "#",
+    imageUrl: "/ayman/ecommerce-sales-dashboard.jpg",
+    metrics: [
+      { value: "2.07M ر.س", label: "صافي المبيعات (+23.5%)" },
+      { value: "680.8K ر.س", label: "صافي الربح (32.8%)" },
+      { value: "6,000", label: "إجمالي الطلبات" },
+      { value: "4.11 / 5", label: "متوسط التقييم" },
+    ],
+    dataset: "بيانات متجر إلكتروني (2024–2025) تشمل 6,000 طلب لـ 2,224 عميلاً، الفئات الخمس، المواسم الترويجية، قنوات البيع، وأيام التوصيل.",
+    preprocessing: "حساب صافي الهامش بعد الخصم وتكلفة المرتجعات (9.7%)، وتصنيف فترات التوصيل وربطها بتقييمات العملاء.",
+    architecture: "لوحة تنفيذية موحدة تجمع المؤشرات المالية واللوجستية والتسويقية في شاشة قرار واحدة.",
+    evaluation: "مطابقة إجمالي الخصومات (243,166 ر.س أي 9.6% من قيمة الطلبات) والتحقق من أثر الخصم فوق 25% الذي يهبط بالهامش إلى 12.5%.",
+    impact: "تساعد المدير التجاري على إيقاف خصومات 40% الخاسرة في المواسم، وتحسين شركات الشحن في المناطق التي يتجاوز توصيلها 5.5 أيام.",
+    challenges: "الربط بين بيانات التسويق (المواسم والخصومات) وبيانات العمليات اللوجستية (أيام التوصيل والمرتجعات) في نموذج واحد.",
+  },
+  {
+    slug: "nwc-executive-sla-workorders-dashboard",
+    title: "النظرة التنفيذية لأوامر العمل والالتزام بـ SLA — شركة المياه الوطنية · NWC Executive SLA Dashboard",
+    category: "إدارة مرافق وعمليات",
+    accent: "teal",
+    summary:
+      "لوحة تنفيذية لمتابعة 16,028 أمر عمل و15,807 طلبات خدمة بنسبة التزام باتفاقية مستوى الخدمة (SLA) بلغت 99.5% متجاوزة المستهدف (90%)، مع قياس معدل إغلاق البلاغات (91.4%) ورضا العملاء (94.6%).",
+    problem:
+      "الحاجة إلى مراقبة فورية لحجم أوامر العمل المتزايد (+54.5% شهرياً) والتأكد من التزام وحدات الأعمال بمعايير SLA وعدم تراكم البلاغات المفتوحة.",
+    approach:
+      "بناء لوحة قيادة تنفيذية تدمج مؤشرات SLA، أوامر العمل، طلبات الخدمة، وتوزيع رضا العملاء (4.73 من 5) مع مقارنة الأداء الشهري وتوزيع الضغط حسب وحدات الأعمال.",
+    result:
+      "تحقيق نسبة التزام SLA بلغت 99.5% (+3.8 نقطة عن الشهر السابق)، وإغلاق 91.4% من إجمالي أوامر العمل، وتحديد وحدة أعمال مكة كأعلى منطقة ضغط تشغيلي بـ 8,206 أوامر عمل تليها جدة بـ 3,694 أمراً.",
+    technologies: ["Power BI", "DAX", "SLA Compliance", "Work Order Management", "Customer Satisfaction"],
+    github: "https://github.com/aymanyalshehri",
+    demo: "#",
+    imageUrl: "/ayman/nwc-executive-sla-dashboard.jpg",
+    metrics: [
+      { value: "99.5%", label: "الالتزام بـ SLA" },
+      { value: "16,028", label: "إجمالي أوامر العمل" },
+      { value: "91.4%", label: "معدل إغلاق الأوامر" },
+      { value: "94.6%", label: "نسبة رضا العملاء" },
+    ],
+    dataset: "سجلات أوامر العمل وطلبات الخدمة وتقييمات العملاء (6,652 تقييماً) موزعة شهرياً وحسب وحدات الأعمال.",
+    preprocessing: "احتساب مدد الاستجابة والإغلاق ومقارنتها بمعيار SLA المستهدف (90%)، وتصنيف التقييمات إلى راضين ومحايدين وغير راضين.",
+    architecture: "تصميم تنفيذي نظيف بشريط تنقل جانبي ومؤشرات مقارنة شهرية (MoM) تبرز نسب النمو والتحسن بوضوح.",
+    evaluation: "مطابقة أعداد الراضين (6,296 عميلاً أي 94.6%) وغير الراضين (252 عميلاً أي 3.8%) مع إجمالي التقييمات.",
+    impact: "تمكّن مدير العمليات من إعادة توزيع الفرق الميدانية نحو وحدات الأعمال الأعلى كثافة في أوامر العمل، والحفاظ على مستوى SLA فوق 99%.",
+    challenges: "مواكبة الارتفاع القياسي في أوامر العمل (+54.5%) وطلبات الخدمة (+32.2%) مع الحفاظ على سرعة الإغلاق وجودة الخدمة.",
+  },
+  {
     slug: "hotel-tourism-performance-analytics-dashboard",
     title: "لوحة تحليل أداء الفنادق والسياحة · Hotel & Tourism Performance Analytics Dashboard",
     category: "فنادق وسياحة",
@@ -211,9 +344,9 @@ export const projects: Project[] = [
     result:
       "رصد إيرادات غرف بلغت 25.77 مليار ر.س وصافي ربح تشغيلي 9.77 مليار ر.س بهامش 37.9%، ومتابعة 51.6 مليون ليلة مباعة بنسبة إشغال 58.8% ومتوسط سعر ليلة 499.4 ر.س، ومتوسط تقييم 4.07 من 5، وتحليل قنوات الحجز (Booking بنسبة 32.2%) ومعدل إلغاء 12.4% عبر 12 دولة عربية.",
     technologies: ["Power BI", "DAX", "Data Modeling", "Hospitality Analytics", "Revenue Management", "ETL"],
-    github: "https://github.com/ayman-alshehri",
+    github: "https://github.com/aymanyalshehri",
     demo: "#",
-    imageUrl: "/ayman/hotel-tourism-analytics-cover.jpg",
+    imageUrl: "/ayman/hotel-tourism-analytics-overview.jpg",
     gallery: [
       "/ayman/hotel-tourism-analytics-overview.jpg",
       "/ayman/hotel-tourism-analytics-bookings.jpg",
@@ -243,7 +376,7 @@ export const projects: Project[] = [
   {
     slug: "facilities-management-executive-dashboard",
     title: "لوحة الأداء التنفيذي لإدارة المرافق · Facilities Management Executive Dashboard",
-    category: "إدارة مرافق",
+    category: "إدارة مرافق وعمليات",
     accent: "violet",
     summary:
       "لوحة قيادة تنفيذية شاملة لإدارة المرافق والصيانة ومشاريع التطوير، تغطي 31,472 وحدة سكنية مدارة وتتابع 8,010 أوامر صيانة واستثمارات تطويرية بقيمة 6.48 مليار دولار بنسبة التزام بالمواعيد 83%.",
@@ -254,7 +387,7 @@ export const projects: Project[] = [
     result:
       "إدارة 31,472 وحدة سكنية مدارة (+23.6% YoY)، وإنجاز 7,867 أمر صيانة (+33.1% YoY) وتقليص الأوامر المفتوحة إلى 507 أوامر (-13.9%) بنسبة التزام بالموعد بلغت 83.0%، مع متابعة 15 مشروع تطوير باستثمارات 6.48 مليار دولار وإنجاز مرجح 48.2%.",
     technologies: ["Power BI", "DAX", "Facilities Intelligence", "Maintenance Operations", "Capital Investment", "KPI Analytics"],
-    github: "https://github.com/ayman-alshehri",
+    github: "https://github.com/aymanyalshehri",
     demo: "#",
     imageUrl: "/ayman/facilities-management-dashboard.jpg",
     metrics: [
@@ -280,7 +413,7 @@ export const projects: Project[] = [
   },
   {
     slug: "saudi-arabia-weather-dashboard",
-    title: "لوحة بيانات الطقس في المملكة العربية السعودية · Saudi Arabia Weather Dashboard",
+    title: "لوحة بيانات الطقس والمناخ في المملكة · Saudi Arabia Weather Dashboard",
     category: "الطقس",
     accent: "teal",
     summary:
@@ -290,11 +423,11 @@ export const projects: Project[] = [
     approach:
       "بناء نموذج تحليلي متعدد الأبعاد في Power BI يربط 12 منطقة رئيسية على مدى 6 سنوات وتوزيع التحليل عبر 4 صفحات تخصصية: نظرة عامة ومقارنة المناطق، تحليل درجات الحرارة، تحليل الأمطار، ومؤشرات الرطوبة والرياح مع أدوات تفاعلية للمقارنة والفلترة.",
     result:
-      "إتاحة مقارنة فورية بين المدن؛ حيث تُظهر اللوحة مكة المكرمة بأعلى متوسط حرارة (31.1°م) وأبها بأدنى متوسط (17.0°م)، وتحديد أبها كأعلى المدن هطولاً للأمطار بإجمالي 6,809 ملم، ومتوسط سرعة رياح 13.12 كم/س على مستوى المملكة.",
+      "إتاحة مقارنة فورية بين المناطق؛ حيث تُظهر اللوحة مكة المكرمة بأعلى متوسط حرارة (31.1°م) وأبها بأدنى متوسط (17.0°م)، وتحديد أبها كأعلى المناطق هطولاً للأمطار بإجمالي 6,809 ملم، ومتوسط سرعة رياح 13.12 كم/س على مستوى المملكة.",
     technologies: ["Power BI", "Power Query", "DAX", "Data Modeling", "Weather Analytics"],
-    github: "https://github.com/ayman-alshehri",
+    github: "https://github.com/aymanyalshehri",
     demo: "#",
-    imageUrl: "/ayman/02_الصورة_الأصلية_لغلاف_مشروع_لوحة_الطقس_في.png",
+    imageUrl: "/ayman/03_الملخص_العام_للطقس_ومقارنة_المدن.png",
     gallery: [
       "/ayman/03_الملخص_العام_للطقس_ومقارنة_المدن.png",
       "/ayman/04_تحليل_درجات_الحرارة.png",
@@ -314,7 +447,7 @@ export const projects: Project[] = [
     preprocessing:
       "تنظيف ومعالجة البيانات عبر Power Query، توحيد المقاييس الزمنية، واستحداث جداول التقويم والجغرافيا للربط الفعال.",
     architecture:
-      "نموذج نجمي (Star Schema) في Power BI مع مقاييس DAX لحساب المتوسطات الوزنية ومعدلات الهطول التراكمية ومقارنات المدن.",
+      "نموذج نجمي (Star Schema) في Power BI مع مقاييس DAX لحساب المتوسطات الوزنية ومعدلات الهطول التراكمية ومقارنات المناطق.",
     evaluation:
       "مطابقة أرقام اللوحة مع المجاميع التاريخية واختبار تفاعلية الفلاتر عبر 4 صفحات متصلة.",
     impact:
@@ -325,7 +458,7 @@ export const projects: Project[] = [
   {
     slug: "retail-sales-operations-dashboard",
     title: "لوحة مبيعات وعمليات التجزئة · Retail Sales & Operations Dashboard",
-    category: "تجزئة",
+    category: "تجزئة وتجارة إلكترونية",
     accent: "violet",
     summary:
       "لوحة أداء مبيعات التجزئة تتابع الإيرادات والربحية والعملاء والطلبات، وتتيح المقارنة بين المناطق والفئات والسنوات لدعم خطط التوسع والتشغيل.",
@@ -336,7 +469,7 @@ export const projects: Project[] = [
     result:
       "تتبّع دقيق لإجمالي مبيعات بلغ نحو 2.30 مليون دولار و5,009 طلبات لـ793 عميلاً بهامش ربح 12.47%، مع إبراز فئة الهواتف كالمتصدرة للإيرادات.",
     technologies: ["Power BI", "DAX", "Power Query", "Retail Operations", "Financial Modeling"],
-    github: "https://github.com/ayman-alshehri",
+    github: "https://github.com/aymanyalshehri",
     demo: "#",
     imageUrl: "/ayman/07_لوحة_Retail_Sales__amp__Operations_Dashb.png",
     metrics: [
@@ -366,7 +499,7 @@ export const projects: Project[] = [
     result:
       "عرض شامل لـ311 موظفاً بنسبة نشاط 67% وتوزيع متوازن (57% موظفات، 43% موظفون)، ورصد تقييم Fully Meets الأعلى بـ243 موظفاً مع قياس مصادر التوظيف الأكثر فاعلية.",
     technologies: ["Power BI", "DAX", "HR Analytics", "Workforce Planning", "Data Storytelling"],
-    github: "https://github.com/ayman-alshehri",
+    github: "https://github.com/aymanyalshehri",
     demo: "#",
     imageUrl: "/ayman/08_لوحة_HR_Dashboard.png",
     metrics: [
@@ -397,7 +530,7 @@ export const projects: Project[] = [
     result:
       "متابعة مبيعات بنحو 14.92 مليون دولار وصافي ربح 1.52 مليون دولار عبر 8,399 طلباً بمتوسط سعر وحدة 89.33 دولار مع كشف فترات الربح القياسية.",
     technologies: ["Power BI", "DAX", "Financial Analysis", "Time Intelligence", "Sales Metrics"],
-    github: "https://github.com/ayman-alshehri",
+    github: "https://github.com/aymanyalshehri",
     demo: "#",
     imageUrl: "/ayman/09_لوحة_Sales__amp__Profit_Analytics.png",
     metrics: [
@@ -427,7 +560,7 @@ export const projects: Project[] = [
     result:
       "قياس 896 تحويلاً بقيمة 249 ألف دولار مع عائد إنفاق إعلاني ROAS بلغ 4.91x ومعدل تحويل قياسي 30.43%، مما مكّن الفريق من إعادة توزيع الميزانية بذكاء.",
     technologies: ["Power BI", "Marketing Analytics", "ROAS Modeling", "Conversion Optimization"],
-    github: "https://github.com/ayman-alshehri",
+    github: "https://github.com/aymanyalshehri",
     demo: "#",
     imageUrl: "/ayman/10_لوحة_Digital_Ad_Performance_Dashboard_20.png",
     metrics: [
@@ -445,7 +578,7 @@ export const projects: Project[] = [
   },
   {
     slug: "king-khalid-hospital-operations-dashboard",
-    title: "لوحة تحكم العمليات والبلاغات — مستشفى الملك خالد بالخرج · Operations Dashboard",
+    title: "لوحة تحكم العمليات والبلاغات — مستشفى الملك خالد · Operations Dashboard",
     category: "قطاع صحي",
     accent: "pink",
     summary:
@@ -457,7 +590,7 @@ export const projects: Project[] = [
     result:
       "متابعة 121 بلاغاً منها 118 بلاغاً مغلقاً بنسبة نجاح 97.5%، وتسجيل متوسط زمن استجابة قياسي 04:32 دقيقة ورصد 248 مكالمة لتحديد الأولويات التشغيلية.",
     technologies: ["Power BI", "Healthcare Operations", "Incident Response", "Safety Analytics"],
-    github: "https://github.com/ayman-alshehri",
+    github: "https://github.com/aymanyalshehri",
     demo: "#",
     imageUrl: "/ayman/11_لوحة_تحكم_العمليات_والبلاغات_-_مستشفى_ال.png",
     metrics: [
