@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans_Arabic, Space_Mono } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/components/language-context";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { CursorGlow } from "@/components/cursor-glow";
@@ -109,10 +110,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <div className="stars layer2" />
         </div>
 
-        <CursorGlow />
-        <Navigation />
-        <main id="main" className="relative z-10">{children}</main>
-        <Footer />
+        <LanguageProvider>
+          <CursorGlow />
+          <Navigation />
+          <main id="main" className="relative z-10">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

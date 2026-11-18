@@ -5,13 +5,14 @@ import {
   ArrowRight,
   Briefcase,
   CheckCircle2,
+  Database,
   Layers,
   Sparkles,
-  ZoomIn,
+  Wrench,
+  Zap,
 } from "lucide-react";
 import { PageVideoShell } from "@/components/page-video-shell";
-import { ProjectVisual } from "@/components/project-card";
-import { getProjectImageUrl, withBasePath } from "@/components/project-utils";
+import { ProjectMediaGallery } from "@/components/project-media-gallery";
 import { SectionReveal } from "@/components/section-reveal";
 import { projects } from "@/data/portfolio";
 
@@ -53,30 +54,69 @@ export default async function ProjectDetailPage({ params }: Props) {
   const project = projects.find((item) => item.slug === slug);
   if (!project) notFound();
 
-  const imageUrl = getProjectImageUrl(project);
+  const galleryImages =
+    project.gallery && project.gallery.length > 0
+      ? project.gallery
+      : [project.imageUrl];
+
+  const primaryMetric = project.metrics[0]
+    ? `${project.metrics[0].value} (${project.metrics[0].label})`
+    : "تحليل بيانات تشغيلي";
+
+  const coreTools = project.technologies.slice(0, 3).join(" · ");
 
   return (
     <PageVideoShell className="projects-detail-shell">
       <div className="relative w-full pt-28 pb-24 text-right">
-        {/* Top Back Link + Hero Header */}
-        <section className="container-shell mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12">
+        <section className="container-shell mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-10">
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 text-xs font-mono font-bold text-teal-300 hover:text-white transition mb-6"
           >
             <ArrowRight className="h-4 w-4" />
-            <span>العودة إلى كافة المشاريع</span>
+            <span>العودة إلى كافة المشاريع / Back to Projects</span>
           </Link>
 
+          <SectionReveal className="mb-8 p-4 sm:p-5 rounded-2xl border border-teal-400/35 bg-gradient-to-l from-teal-500/10 via-[#121826]/95 to-purple-500/10 backdrop-blur-xl shadow-xl">
+            <div className="flex items-center gap-2 text-xs font-mono font-bold text-teal-300 mb-3">
+              <Zap className="h-4 w-4 text-amber-300" />
+              <span>ملخص الـ 10 ثواني للـ HR والمدراء · 10-Second Executive Snapshot</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-3.5 rounded-xl border border-white/10 bg-slate-950/60 flex items-start gap-3">
+                <Database className="h-5 w-5 text-cyan-400 shrink-0 mt-0.5" />
+                <div>
+                  <span className="block text-[0.7rem] font-mono text-slate-400">نطاق البيانات والمؤشر الأبرز</span>
+                  <span className="block text-sm font-bold text-white mt-0.5">{primaryMetric}</span>
+                </div>
+              </div>
+              <div className="p-3.5 rounded-xl border border-white/10 bg-slate-950/60 flex items-start gap-3">
+                <Wrench className="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
+                <div>
+                  <span className="block text-[0.7rem] font-mono text-slate-400">الأدوات والمنهجية الأساسية</span>
+                  <span className="block text-sm font-bold text-white font-mono mt-0.5">{coreTools}</span>
+                </div>
+              </div>
+              <div className="p-3.5 rounded-xl border border-white/10 bg-slate-950/60 flex items-start gap-3">
+                <Briefcase className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
+                <div>
+                  <span className="block text-[0.7rem] font-mono text-slate-400">القرار الإداري المدعوم</span>
+                  <span className="block text-xs sm:text-sm font-semibold text-emerald-200 mt-0.5 line-clamp-2">
+                    {project.impact}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </SectionReveal>
+
           <div className="grid gap-8 lg:grid-cols-12 items-start">
-            {/* Project Copy */}
-            <SectionReveal className="lg:col-span-6 space-y-5">
+            <SectionReveal className="lg:col-span-5 space-y-5">
               <div className="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-400/10 px-3.5 py-1 text-xs font-mono font-bold uppercase tracking-widest text-teal-300 backdrop-blur-md">
                 <Sparkles className="h-3.5 w-3.5" />
-                <span>لوحة Power BI · {project.category}</span>
+                <span>Power BI · {project.category}</span>
               </div>
 
-              <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
                 <GradientTitle>{project.title}</GradientTitle>
               </h1>
 
@@ -84,18 +124,6 @@ export default async function ProjectDetailPage({ params }: Props) {
                 {project.summary}
               </p>
 
-              {/* Executive Value Highlight Box for Managers & HR */}
-              <div className="p-4 sm:p-5 rounded-2xl border border-teal-400/30 bg-teal-400/10 space-y-2 shadow-lg">
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-mono font-bold text-teal-300">
-                  <Briefcase className="h-4 w-4 shrink-0" />
-                  <span>القيمة المباشرة للمدير ومتخذ القرار:</span>
-                </div>
-                <p className="text-xs sm:text-sm text-white leading-relaxed font-medium">
-                  {project.impact}
-                </p>
-              </div>
-
-              {/* Tech Stack Pills */}
               <div className="flex flex-wrap gap-2 pt-1">
                 {project.technologies.map((tech) => (
                   <span
@@ -108,47 +136,16 @@ export default async function ProjectDetailPage({ params }: Props) {
               </div>
             </SectionReveal>
 
-            {/* Right Media Image Preview + Sub-page Thumbnails */}
-            <SectionReveal className="lg:col-span-6 space-y-3">
-              <div className="overflow-hidden rounded-2xl border border-teal-400/30 shadow-2xl bg-[#121826]">
-                <ProjectVisual
-                  imageUrl={imageUrl}
-                  title={project.title}
-                  category={project.category}
-                  accent={project.accent}
-                />
-              </div>
-
-              {project.gallery && project.gallery.length > 1 && (
-                <div className="p-3 rounded-2xl border border-white/10 bg-[#121826]/90 flex items-center justify-between gap-3">
-                  <span className="text-xs font-mono font-bold text-teal-300 whitespace-nowrap">
-                    صفحات اللوحة ({project.gallery.length}):
-                  </span>
-                  <div className="flex items-center gap-2 overflow-x-auto">
-                    {project.gallery.map((pageImg, idx) => (
-                      <a
-                        key={pageImg}
-                        href={`#page-${idx + 1}`}
-                        className="relative h-12 w-20 rounded-lg overflow-hidden border border-teal-400/40 hover:scale-105 transition shrink-0"
-                      >
-                        <img
-                          src={encodeURI(withBasePath(pageImg))}
-                          alt={`صفحة ${idx + 1}`}
-                          className="h-full w-full object-cover object-top"
-                        />
-                        <span className="absolute bottom-0 right-0 bg-slate-950/85 px-1.5 py-0.5 text-[10px] font-mono font-bold text-teal-300">
-                          0{idx + 1}
-                        </span>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
+            <SectionReveal className="lg:col-span-7">
+              <ProjectMediaGallery
+                images={galleryImages}
+                title={project.title}
+                category={project.category}
+              />
             </SectionReveal>
           </div>
         </section>
 
-        {/* Key Metrics Strip */}
         <section className="container-shell mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-12">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {project.metrics.map((m) => (
@@ -167,7 +164,6 @@ export default async function ProjectDetailPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Concise Problem, Analytical Solution & Business Outcome */}
         <section className="container-shell mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14">
           <SectionReveal className="p-6 sm:p-8 rounded-3xl border border-white/10 bg-[#121826]/85 backdrop-blur-xl shadow-2xl">
             <h2 className="text-xl sm:text-2xl font-extrabold text-white mb-6">
@@ -214,43 +210,6 @@ export default async function ProjectDetailPage({ params }: Props) {
           </SectionReveal>
         </section>
 
-        {/* Multi-page Gallery (if project has multiple pages) */}
-        {project.gallery && project.gallery.length > 0 && (
-          <section className="container-shell mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
-            <SectionReveal className="p-6 sm:p-8 rounded-3xl border border-teal-400/30 bg-[#121826]/85 backdrop-blur-xl shadow-2xl space-y-6">
-              <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-300">
-                  استعراض كافة صفحات الداشبورد
-                </span>
-                <h2 className="text-xl sm:text-2xl font-extrabold text-white mt-1">
-                  صفحات اللوحة التحليلية ({project.gallery.length} صفحات)
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {project.gallery.map((pageImg, idx) => (
-                  <div
-                    id={`page-${idx + 1}`}
-                    key={pageImg}
-                    className="rounded-2xl border border-white/10 bg-black/40 overflow-hidden shadow-lg group hover:border-teal-400/40 transition-all"
-                  >
-                    <div className="p-3 border-b border-white/10 flex items-center justify-between text-xs font-mono text-teal-300">
-                      <span>الصفحة التحليلية 0{idx + 1}</span>
-                      <ZoomIn className="h-4 w-4" />
-                    </div>
-                    <img
-                      src={encodeURI(withBasePath(pageImg))}
-                      alt={`الصفحة التحليلية 0${idx + 1}`}
-                      className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-300"
-                    />
-                  </div>
-                ))}
-              </div>
-            </SectionReveal>
-          </section>
-        )}
-
-        {/* Concise 2-Card Technical Summary */}
         <section className="container-shell mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <SectionReveal className="p-6 rounded-2xl border border-white/10 bg-[#121826]/85 backdrop-blur-xl shadow-xl space-y-2">

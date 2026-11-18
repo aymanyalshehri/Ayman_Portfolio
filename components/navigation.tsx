@@ -13,6 +13,7 @@ import {
   X,
   Compass,
   ChevronLeft,
+  Globe,
   Sparkles,
 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -20,19 +21,21 @@ import { AnimatePresence, motion } from "framer-motion";
 import { profile } from "@/data/portfolio";
 import { cn } from "@/components/utils";
 import { AymanAvatar } from "@/components/ayman-avatar";
+import { useLanguage } from "@/components/language-context";
 
 const links = [
-  { href: "/", label: "الرئيسية", icon: Home, desc: "نبذة واستعراض المشاريع" },
-  { href: "/projects", label: "الأعمال", icon: BarChart3, desc: "لوحات Power BI التفاعلية" },
-  { href: "/skills", label: "المهارات", icon: Layers, desc: "Power BI, Excel, SQL, Python" },
-  { href: "/experience", label: "الخبرات", icon: Briefcase, desc: "رواد الأعمال وبلدية وادي هشبل" },
-  { href: "/about", label: "نبذة عني", icon: User, desc: "خريج MIS من جامعة طيبة" },
-  { href: "/resume", label: "المؤهلات", icon: FileText, desc: "السيرة والشهادات المعتمدة" },
-  { href: "/contact", label: "تواصل معي", icon: Mail, desc: "بيانات التواصل المباشرة" },
+  { href: "/", label: "الرئيسية", labelEn: "Home", icon: Home, desc: "نبذة واستعراض المشاريع", descEn: "Overview & Featured Dashboards" },
+  { href: "/projects", label: "الأعمال", labelEn: "Projects", icon: BarChart3, desc: "لوحات Power BI التفاعلية", descEn: "Interactive Power BI Dashboards" },
+  { href: "/skills", label: "المهارات", labelEn: "Skills", icon: Layers, desc: "Power BI, Excel, SQL, Python", descEn: "Power BI, Excel, SQL, Python" },
+  { href: "/experience", label: "الخبرات", labelEn: "Experience", icon: Briefcase, desc: "رواد الأعمال وبلدية وادي هشبل", descEn: "Field & Analytics Experience" },
+  { href: "/about", label: "نبذة عني", labelEn: "About", icon: User, desc: "خريج MIS من جامعة طيبة", descEn: "MIS Graduate · Data Analyst" },
+  { href: "/resume", label: "المؤهلات", labelEn: "Resume", icon: FileText, desc: "السيرة والشهادات المعتمدة", descEn: "CV & Verified Certifications" },
+  { href: "/contact", label: "تواصل معي", labelEn: "Contact", icon: Mail, desc: "بيانات التواصل المباشرة", descEn: "Direct Recruiter Contact" },
 ] as const;
 
 export function Navigation() {
   const pathname = usePathname();
+  const { lang, toggleLang, t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -89,17 +92,17 @@ export function Navigation() {
 
             <div className="flex flex-col text-right justify-center">
               <span className="text-sm font-bold text-white group-hover:text-teal-300 transition-colors whitespace-nowrap">
-                {profile.name}
+                {t(profile.name, profile.nameEn)}
               </span>
               <span className="text-[11px] font-mono text-teal-300/80 whitespace-nowrap">
-                {profile.title}
+                {t(profile.title, profile.titleEn)}
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links + Language Toggle */}
           <div className="hidden items-center gap-1 lg:flex">
-            {links.map(({ href, label }) => {
+            {links.map(({ href, label, labelEn }) => {
               const active =
                 pathname === href || (href !== "/" && pathname.startsWith(href));
               return (
@@ -107,27 +110,47 @@ export function Navigation() {
                   key={href}
                   href={href}
                   className={cn(
-                    "rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition-all hover:bg-white/10 hover:text-white",
+                    "rounded-full px-3.5 py-2 text-sm font-medium text-slate-300 transition-all hover:bg-white/10 hover:text-white",
                     active &&
                       "bg-teal-400/15 text-teal-300 border border-teal-400/30 shadow-[0_0_12px_rgba(45,212,191,0.2)] font-semibold"
                   )}
                 >
-                  {label}
+                  {t(label, labelEn)}
                 </Link>
               );
             })}
+
+            <button
+              type="button"
+              onClick={toggleLang}
+              className="mr-2 inline-flex items-center gap-1.5 rounded-full border border-teal-400/40 bg-teal-400/10 px-3.5 py-1.5 text-xs font-mono font-bold text-teal-300 hover:bg-teal-400 hover:text-slate-950 transition-all cursor-pointer"
+              title="Switch Language / تبديل اللغة"
+            >
+              <Globe className="h-3.5 w-3.5" />
+              <span>{lang === "ar" ? "EN" : "عربي"}</span>
+            </button>
           </div>
 
-          {/* Mobile Top Menu Button */}
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            className="lg:hidden flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-400/10 px-3.5 py-1.5 text-xs font-mono font-bold text-teal-300 backdrop-blur-md hover:bg-teal-400/20 active:scale-95 transition"
-            aria-label="فتح القائمة"
-          >
-            <Compass className="h-4 w-4" />
-            <span>القائمة</span>
-          </button>
+          {/* Mobile Controls: Language Toggle + Menu */}
+          <div className="lg:hidden flex items-center gap-2">
+            <button
+              type="button"
+              onClick={toggleLang}
+              className="inline-flex items-center gap-1 rounded-full border border-teal-400/40 bg-teal-400/10 px-2.5 py-1.5 text-xs font-mono font-bold text-teal-300 hover:bg-teal-400 hover:text-slate-950 transition cursor-pointer"
+            >
+              <Globe className="h-3.5 w-3.5" />
+              <span>{lang === "ar" ? "EN" : "عربي"}</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              className="flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-400/10 px-3.5 py-1.5 text-xs font-mono font-bold text-teal-300 backdrop-blur-md hover:bg-teal-400/20 active:scale-95 transition"
+              aria-label="فتح القائمة"
+            >
+              <Compass className="h-4 w-4" />
+              <span>{t("القائمة", "Menu")}</span>
+            </button>
+          </div>
         </nav>
       </header>
 

@@ -26,6 +26,7 @@ import { MagneticButton } from "@/components/magnetic-button";
 import { PageVideoShell } from "@/components/page-video-shell";
 import { Preloader } from "@/components/preloader";
 import { ProjectCard } from "@/components/project-card";
+import { useLanguage } from "@/components/language-context";
 import {
   certifications,
   education,
@@ -109,6 +110,7 @@ function Kicker({
 
 function HeroSection() {
   const ref = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -282,15 +284,15 @@ function HeroSection() {
 
         {/* Name */}
         <h1 className="hero-name text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white max-w-4xl drop-shadow-2xl">
-          <GradientTitle>{profile.name}</GradientTitle>
+          <GradientTitle>{t(profile.name, profile.nameEn)}</GradientTitle>
         </h1>
 
         {/* Headline + subtitle */}
         <p className="hero-sub text-lg sm:text-2xl font-bold text-cyan-200 max-w-2xl mt-4 leading-tight drop-shadow-md">
-          {profile.headline}
+          {t(profile.headline, profile.headlineEn)}
         </p>
         <p className="text-sm sm:text-base text-slate-300 max-w-2xl mt-3 leading-relaxed drop-shadow-sm">
-          {profile.subtitle}
+          {t(profile.subtitle, "MIS Graduate from Taibah University combining business acumen and technical analytics (Power BI, SQL, Excel, Python) to turn raw data into executive dashboards and clear decisions.")}
         </p>
 
         {/* Buttons */}
