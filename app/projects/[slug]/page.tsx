@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { PageVideoShell } from "@/components/page-video-shell";
 import { ProjectVisual } from "@/components/project-card";
-import { getProjectImageUrl } from "@/components/project-utils";
+import { getProjectImageUrl, withBasePath } from "@/components/project-utils";
 import { SectionReveal } from "@/components/section-reveal";
 import { FlowDiagram } from "@/components/data-flow";
 import { projects } from "@/data/portfolio";
@@ -183,7 +183,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                       <ZoomIn className="h-4 w-4" />
                     </div>
                     <img
-                      src={pageImg}
+                      src={withBasePath(pageImg)}
                       alt={`الصفحة التحليلية 0${idx + 1}`}
                       className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-300"
                     />

@@ -2,6 +2,16 @@ import { projects } from "@/data/portfolio";
 
 type Project = (typeof projects)[number];
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+export function withBasePath(path?: string): string {
+  if (!path) return "";
+  if (path.startsWith("http") || path.startsWith("data:") || (BASE_PATH && path.startsWith(BASE_PATH))) {
+    return path;
+  }
+  return `${BASE_PATH}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
 const projectImagesBySlug: Record<string, string> = {
   "baladna-production-distribution-dashboard": "/projects/Baladna Production & Distribution Dashboard.png",
   "electrical-shop-analysis-dashboard": "/projects/Shop Analysis Project.png",
@@ -14,5 +24,6 @@ const projectImagesBySlug: Record<string, string> = {
 };
 
 export function getProjectImageUrl(project: Pick<Project, "imageUrl" | "slug">) {
-  return project.imageUrl ?? projectImagesBySlug[project.slug];
+  const raw = project.imageUrl ?? projectImagesBySlug[project.slug];
+  return withBasePath(raw);
 }

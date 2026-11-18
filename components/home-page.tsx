@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import {
   Award,
   BarChart3,
@@ -478,7 +480,7 @@ function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {featuredProjects.map((p) => (
-            <a
+            <Link
               key={p.slug}
               href={`/projects/${p.slug}`}
               className="proj-animate flex flex-col h-full rounded-2xl border border-white/10 bg-slate-900/70 backdrop-blur-xl overflow-hidden hover:border-cyan-400/40 hover:-translate-y-1.5 transition-all duration-300 shadow-xl group"
@@ -528,7 +530,7 @@ function ProjectsSection() {
                   ))}
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
