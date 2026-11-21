@@ -1,0 +1,102 @@
+name: Apply Portfolio Edits
+
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-edits.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-portfolio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Apply text and contrast fixes
+        run: |
+          python3 - << 'EOF'
+          import os
+          import re
+
+          TARGET_DIRS = ['app', 'components', 'data', 'Ayman_Portfolio_Standalone_Netlify']
+          VALID_EXTS = {'.ts', '.tsx', '.js', '.jsx', '.json', '.html', '.css', '.md'}
+
+          exact_replacements = [
+              ('بلدية وادي بن هشبل', 'بلدية خميس مشيط (360 ساعة)'),
+              ('بلدية وادي هشبل', 'بلدية خميس مشيط (360 ساعة)'),
+              ('Wadi Bin Hashbal Municipality', 'Khamis Mushait Municipality (360 Hours)'),
+              ('Wadi Hashbal Municipality', 'Khamis Mushait Municipality (360 Hours)'),
+              ('Wadi Bin Hashbal', 'Khamis Mushait (360 Hours)'),
+              ('Wadi Hashbal', 'Khamis Mushait (360 Hours)'),
+              ('أيمن يحي الشهري', 'أيمن يحيى الشهري'),
+          ]
+
+          regex_replacements = [
+              (r'المدينة المنورة[^"\'`\n<]*', 'مستعد للعمل حالاً'),
+              (r'(?:Al-?)?(?:Madinah|Medina)[^"\'`\n<]*', 'Available to work immediately'),
+          ]
+
+          dim_classes = [
+              'text-slate-400', 'text-slate-300',
+              'text-gray-400', 'text-gray-300',
+              'text-zinc-400', 'text-zinc-300',
+              'text-neutral-400', 'text-neutral-300',
+              'text-white/60', 'text-white/70', 'text-white/75', 'text-white/80',
+          ]
+
+          changed_files = []
+
+          for base_dir in TARGET_DIRS:
+              if not os.path.isdir(base_dir):
+                  continue
+              for root, _, files in os.walk(base_dir):
+                  for fname in files:
+                      ext = os.path.splitext(fname)[1].lower()
+                      if ext not in VALID_EXTS:
+                          continue
+                      fpath = os.path.join(root, fname)
+                      try:
+                          with open(fpath, 'r', encoding='utf-8') as f:
+                              content = f.read()
+                      except Exception:
+                          continue
+
+                      new_content = content
+
+                      for old, new in exact_replacements:
+                          new_content = new_content.replace(old, new)
+
+                      for pattern, repl in regex_replacements:
+                          new_content = re.sub(pattern, repl, new_content)
+
+                      # Increase contrast for bio / hero / about text
+                      lower_name = fname.lower()
+                      is_bio_file = (
+                          any(k in lower_name for k in ['hero', 'about', 'bio', 'intro', 'page', 'index'])
+                          or 'أيمن يحيى الشهري' in new_content
+                          or 'نظم المعلومات الإدارية' in new_content
+                      )
+                      if is_bio_file and ext in {'.tsx', '.jsx', '.html'}:
+                          for cls in dim_classes:
+                              new_content = new_content.replace(cls, 'text-slate-100')
+
+                      if new_content != content:
+                          with open(fpath, 'w', encoding='utf-8') as f:
+                              f.write(new_content)
+                          changed_files.append(fpath)
+
+          print("Modified files:", changed_files)
+          EOF
+
+      - name: Cleanup workflow and commit changes
+        run: |
+          rm -f .github/workflows/apply-edits.yml
+          git config user.name "Ayman Portfolio Bot"
+          git config user.email "ayman.y.alshehri@gmail.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "fix: update Khamis Mushait (360h), availability, and bio contrast"
+          git push
