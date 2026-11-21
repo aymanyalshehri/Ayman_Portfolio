@@ -93,7 +93,7 @@ export function ResumePageClient() {
             <GradientTitle>السيرة الذاتية والمؤهلات</GradientTitle>
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-100 max-w-3xl leading-relaxed">
             استعراض متكامل للمؤهل الأكاديمي والخبرات العملية والبرامج التدريبية المعتمدة في تحليل البيانات ونظم المعلومات.
           </p>
 
@@ -149,12 +149,12 @@ export function ResumePageClient() {
                     {profile.name} · {profile.nameEn}
                   </h2>
 
-                  <p className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-100 max-w-xl leading-relaxed">
                     {profile.intro}
                   </p>
 
                   {/* Contact information badges */}
-                  <div className="pt-1 flex flex-wrap gap-4 text-xs font-mono text-slate-300">
+                  <div className="pt-1 flex flex-wrap gap-4 text-xs font-mono text-slate-100">
                     <span className="flex items-center gap-1.5">
                       <MapPin className="h-3.5 w-3.5 text-teal-400 print-hide" />
                       <span>{profile.location}</span>
@@ -197,7 +197,7 @@ export function ResumePageClient() {
                     </span>
                   </div>
                   <p className="text-sm font-semibold text-purple-300">{edu.school}</p>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-100 leading-relaxed">
                     {edu.details}
                   </p>
                 </div>
@@ -229,11 +229,11 @@ export function ResumePageClient() {
                       </span>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-100 leading-relaxed">
                       {exp.summary}
                     </p>
 
-                    <ul className="space-y-1 text-xs text-slate-300 list-disc list-inside">
+                    <ul className="space-y-1 text-xs text-slate-100 list-disc list-inside">
                       {exp.achievements.map((item) => (
                         <li key={item}>{item}</li>
                       ))}
@@ -243,7 +243,7 @@ export function ResumePageClient() {
                       {exp.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2.5 py-0.5 rounded-full border border-white/10 bg-white/5 text-[0.68rem] font-mono text-slate-300"
+                          className="px-2.5 py-0.5 rounded-full border border-white/10 bg-white/5 text-[0.68rem] font-mono text-slate-100"
                         >
                           {tech}
                         </span>
@@ -294,7 +294,7 @@ export function ResumePageClient() {
             </div>
 
             {/* ── Section: Languages ── */}
-            <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-slate-400">
+            <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-slate-100">
               <div className="flex items-center gap-3">
                 <span className="font-bold text-white">اللغات:</span>
                 {languages.map((l) => (

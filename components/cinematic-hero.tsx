@@ -28,7 +28,7 @@ export function CinematicHero() {
           <motion.h1 className="heading-xl aurora-text mt-5 max-w-4xl font-bold leading-tight" initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.8 }}>
             {profile.headline}
           </motion.h1>
-          <motion.p className="muted-copy mt-6 max-w-2xl text-slate-300 leading-relaxed text-base sm:text-lg" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}>
+          <motion.p className="muted-copy mt-6 max-w-2xl text-slate-100 leading-relaxed text-base sm:text-lg" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}>
             {profile.subtitle}
           </motion.p>
           <motion.div className="mt-9 flex flex-col gap-4 sm:flex-row" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}>
@@ -38,18 +38,18 @@ export function CinematicHero() {
           <motion.div className="mt-8 grid gap-3 sm:grid-cols-2" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.0 }}>
             <div className="rounded-2xl border border-teal-400/20 bg-[#121826]/80 p-4 backdrop-blur-xl">
               <p className="flex items-center gap-2 text-sm font-bold text-white"><Target className="h-4 w-4 text-teal-400" /> المجالات المستهدفة</p>
-              <p className="mt-2 text-xs sm:text-sm leading-6 text-slate-300">تحليل البيانات، ذكاء الأعمال، نظم المعلومات الإدارية، دعم التقارير والعمليات</p>
+              <p className="mt-2 text-xs sm:text-sm leading-6 text-slate-100">تحليل البيانات، ذكاء الأعمال، نظم المعلومات الإدارية، دعم التقارير والعمليات</p>
             </div>
             <div className="rounded-2xl border border-purple-400/20 bg-[#121826]/80 p-4 backdrop-blur-xl">
               <p className="flex items-center gap-2 text-sm font-bold text-white"><CheckCircle2 className="h-4 w-4 text-purple-400" /> المهارات الأساسية</p>
-              <p className="mt-2 text-xs sm:text-sm leading-6 text-slate-300">Power BI, Excel, Power Query, DAX, SQL, Python، وإعداد لوحات المعلومات</p>
+              <p className="mt-2 text-xs sm:text-sm leading-6 text-slate-100">Power BI, Excel, Power Query, DAX, SQL, Python، وإعداد لوحات المعلومات</p>
             </div>
           </motion.div>
           <motion.div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }}>
             {stats.map((stat) => (
               <div key={stat.label} className="cinema-card rounded-2xl border border-white/10 bg-[#121826]/70 p-4 backdrop-blur-xl text-center">
                 <p className="text-2xl font-bold font-mono text-teal-300">{stat.value}</p>
-                <p className="mt-1 text-xs text-slate-400">{stat.label}</p>
+                <p className="mt-1 text-xs text-slate-100">{stat.label}</p>
               </div>
             ))}
           </motion.div>
@@ -75,13 +75,13 @@ export function CinematicHero() {
                 ].map(([label, value]) => (
                   <div key={label} className="rounded-2xl border border-white/10 bg-black/30 p-4 text-center">
                     <p className="text-xl font-bold font-mono text-teal-200">{value}</p>
-                    <p className="mt-1 text-xs text-slate-400">{label}</p>
+                    <p className="mt-1 text-xs text-slate-100">{label}</p>
                   </div>
                 ))}
               </div>
               <div className="rounded-2xl border border-white/10 bg-black/30 p-5">
                 <div className="mb-5 flex items-center justify-between">
-                  <p className="font-mono text-xs uppercase tracking-[.18em] text-slate-400">مؤشرات الأداء الحيوي</p>
+                  <p className="font-mono text-xs uppercase tracking-[.18em] text-slate-100">مؤشرات الأداء الحيوي</p>
                   <BarChart3 className="h-5 w-5 text-teal-300" />
                 </div>
                 <AnimatedBars values={[35, 52, 68, 75, 60, 88, 78, 94, 70, 85]} />
@@ -104,7 +104,7 @@ export function CinematicHero() {
         </motion.div>
       </div>
 
-      <Link href="#signal" className="absolute bottom-7 left-1/2 z-10 grid -translate-x-1/2 place-items-center gap-2 text-xs uppercase tracking-[.22em] text-slate-300">
+      <Link href="#signal" className="absolute bottom-7 left-1/2 z-10 grid -translate-x-1/2 place-items-center gap-2 text-xs uppercase tracking-[.22em] text-slate-100">
         <span>استكشف</span>
         <ArrowDown className="h-5 w-5 animate-bounce text-teal-300" />
       </Link>

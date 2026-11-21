@@ -49,14 +49,14 @@ export function ContactForm() {
         <h2 className="text-2xl font-bold text-white tracking-tight">
           راسل أيمن يحيى الشهري
         </h2>
-        <p className="text-xs sm:text-sm text-slate-300 mt-1">
+        <p className="text-xs sm:text-sm text-slate-100 mt-1">
           هل لديك فرصة وظيفية في تحليل البيانات أو استفسار حول تطوير لوحات المؤشرات التفاعلية؟ أرسل رسالتك وسأرد عليك بأسرع وقت.
         </p>
       </div>
 
       {/* Inquiry Type Select Pills */}
       <div>
-        <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-300 mb-2">
+        <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-100 mb-2">
           نوع الطلب / الاستفسار
         </label>
         <div className="flex flex-wrap gap-2">
@@ -70,7 +70,7 @@ export function ContactForm() {
                 className={`rounded-full border px-3 py-1.5 text-xs font-mono font-medium transition-all ${
                   isSelected
                     ? "border-cyan-400 bg-cyan-400 text-slate-950 font-bold shadow-[0_0_12px_rgba(0,217,255,0.4)]"
-                    : "border-white/10 bg-slate-950/60 text-slate-300 hover:border-cyan-400/40 hover:text-white"
+                    : "border-white/10 bg-slate-950/60 text-slate-100 hover:border-cyan-400/40 hover:text-white"
                 }`}
               >
                 {opt}
@@ -83,7 +83,7 @@ export function ContactForm() {
       {/* Name and Email Input Fields */}
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-1.5">
-          <label className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
+          <label className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-100">
             <User className="h-3.5 w-3.5 text-cyan-400" />
             <span>الاسم الكامل</span>
           </label>
@@ -96,7 +96,7 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-1.5">
-          <label className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
+          <label className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-100">
             <Mail className="h-3.5 w-3.5 text-cyan-400" />
             <span>البريد الإلكتروني</span>
           </label>
@@ -112,7 +112,7 @@ export function ContactForm() {
 
       {/* Message Textarea */}
       <div className="space-y-1.5">
-        <label className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
+        <label className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-100">
           <MessageSquare className="h-3.5 w-3.5 text-cyan-400" />
           <span>تفاصيل الفرصة أو متطلبات المشروع</span>
         </label>

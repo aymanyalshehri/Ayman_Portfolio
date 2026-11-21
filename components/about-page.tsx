@@ -167,7 +167,7 @@ export function AboutPageClient() {
             {profile.headline}
           </p>
 
-          <p className="about-fade-in mt-3 text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+          <p className="about-fade-in mt-3 text-sm sm:text-base text-slate-100 max-w-3xl leading-relaxed">
             {profile.subtitle}
           </p>
 
@@ -176,22 +176,22 @@ export function AboutPageClient() {
             <div className="p-4 rounded-2xl border border-teal-400/30 bg-[#121826]/80 backdrop-blur-xl flex flex-col items-center text-center shadow-lg hover:border-teal-400/60 transition-all">
               <GraduationCap className="h-6 w-6 text-teal-400 mb-1" />
               <span className="text-xl font-bold text-white font-mono">MIS B.Sc.</span>
-              <span className="text-xs text-slate-400 mt-0.5">نظم المعلومات الإدارية</span>
+              <span className="text-xs text-slate-100 mt-0.5">نظم المعلومات الإدارية</span>
             </div>
             <div className="p-4 rounded-2xl border border-purple-400/30 bg-[#121826]/80 backdrop-blur-xl flex flex-col items-center text-center shadow-lg hover:border-purple-400/60 transition-all">
               <Database className="h-6 w-6 text-purple-400 mb-1" />
               <span className="text-xl font-bold text-white font-mono">Power BI &amp; SQL</span>
-              <span className="text-xs text-slate-400 mt-0.5">تحليل ونمذجة البيانات</span>
+              <span className="text-xs text-slate-100 mt-0.5">تحليل ونمذجة البيانات</span>
             </div>
             <div className="p-4 rounded-2xl border border-amber-400/30 bg-[#121826]/80 backdrop-blur-xl flex flex-col items-center text-center shadow-lg hover:border-amber-400/60 transition-all">
               <Award className="h-6 w-6 text-amber-400 mb-1" />
               <span className="text-xl font-bold text-white font-mono">185+ ساعة</span>
-              <span className="text-xs text-slate-400 mt-0.5">تدريب مهني معتمد</span>
+              <span className="text-xs text-slate-100 mt-0.5">تدريب مهني معتمد</span>
             </div>
             <div className="p-4 rounded-2xl border border-rose-400/30 bg-[#121826]/80 backdrop-blur-xl flex flex-col items-center text-center shadow-lg hover:border-rose-400/60 transition-all">
               <UserCheck className="h-6 w-6 text-rose-400 mb-1" />
               <span className="text-lg font-bold text-white">متاح فوراً للتوظيف</span>
-              <span className="text-xs text-slate-400 mt-0.5">جميع مناطق المملكة</span>
+              <span className="text-xs text-slate-100 mt-0.5">جميع مناطق المملكة</span>
             </div>
           </div>
 
@@ -231,11 +231,11 @@ export function AboutPageClient() {
                 <h3 className="text-xl font-bold text-white">{profile.name}</h3>
                 <p className="text-xs font-mono text-teal-300">{profile.titleEn}</p>
                 <div className="pt-2 flex flex-wrap gap-2 text-xs">
-                  <span className="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-slate-300 font-mono">Power BI</span>
-                  <span className="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-slate-300 font-mono">Excel</span>
-                  <span className="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-slate-300 font-mono">SQL</span>
-                  <span className="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-slate-300 font-mono">Python</span>
-                  <span className="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-slate-300 font-mono">MIS</span>
+                  <span className="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-slate-100 font-mono">Power BI</span>
+                  <span className="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-slate-100 font-mono">Excel</span>
+                  <span className="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-slate-100 font-mono">SQL</span>
+                  <span className="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-slate-100 font-mono">Python</span>
+                  <span className="px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-slate-100 font-mono">MIS</span>
                 </div>
               </div>
             </div>
@@ -250,30 +250,30 @@ export function AboutPageClient() {
                   </span>
                 </div>
 
-                <p className="text-base text-slate-300 leading-relaxed">
+                <p className="text-base text-slate-100 leading-relaxed">
                   {profile.intro}
                 </p>
 
-                <p className="text-sm text-slate-300 leading-relaxed">
+                <p className="text-sm text-slate-100 leading-relaxed">
                   أهتم بتطبيق التقنية لتحسين سير العمل ودعم اتخاذ القرار، وأسعى إلى تطوير مهاراتي باستمرار في المجالات التقنية وتحليل الأعمال والمعلومات، دون الاقتصار على مسمى وظيفي واحد، مع تركيز دائم على جودة البيانات وموثوقية السجلات وسرعة استخراج المؤشرات الحيوية.
                 </p>
               </div>
 
               {/* Personal Details Snapshot Grid */}
               <div className="pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
-                <div className="flex items-center gap-2 text-slate-300">
+                <div className="flex items-center gap-2 text-slate-100">
                   <CheckCircle2 className="h-4 w-4 text-teal-400 flex-shrink-0" />
                   <span>المؤهل: بكالوريوس نظم المعلومات الإدارية (MIS)</span>
                 </div>
-                <div className="flex items-center gap-2 text-slate-300">
+                <div className="flex items-center gap-2 text-slate-100">
                   <CheckCircle2 className="h-4 w-4 text-teal-400 flex-shrink-0" />
                   <span>الجامعة: جامعة طيبة</span>
                 </div>
-                <div className="flex items-center gap-2 text-slate-300">
+                <div className="flex items-center gap-2 text-slate-100">
                   <CheckCircle2 className="h-4 w-4 text-teal-400 flex-shrink-0" />
                   <span>الأدوات الأساسية: Power BI, Excel, SQL, Python, Word</span>
                 </div>
-                <div className="flex items-center gap-2 text-slate-300">
+                <div className="flex items-center gap-2 text-slate-100">
                   <CheckCircle2 className="h-4 w-4 text-teal-400 flex-shrink-0" />
                   <span>التدريب: دبلوم ودورات تحليل بيانات مهنية متخصصة</span>
                 </div>
@@ -291,7 +291,7 @@ export function AboutPageClient() {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-3">
               <GradientTitle>القيمة التي أقدمها</GradientTitle>
             </h2>
-            <p className="mt-3 text-base text-slate-300">
+            <p className="mt-3 text-base text-slate-100">
               منهجية دقيقة لتحويل البيانات الأولية إلى رؤى استراتيجية تدعم المتابعة وسرعة اتخاذ القرار.
             </p>
           </div>
@@ -309,14 +309,14 @@ export function AboutPageClient() {
                       <div className={`p-2.5 rounded-xl border border-white/10 bg-white/5 ${step.color}`}>
                         <Icon className="h-5 w-5" />
                       </div>
-                      <span className="text-xs font-mono font-bold text-slate-400 group-hover:text-teal-300 transition-colors">
+                      <span className="text-xs font-mono font-bold text-slate-100 group-hover:text-teal-300 transition-colors">
                         {step.num}
                       </span>
                     </div>
                     <h3 className="text-lg font-bold text-white group-hover:text-teal-300 transition-colors leading-snug">
                       {step.title}
                     </h3>
-                    <p className="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <p className="mt-3 text-xs sm:text-sm text-slate-100 leading-relaxed">
                       {step.desc}
                     </p>
                   </div>
@@ -339,7 +339,7 @@ export function AboutPageClient() {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-3">
               <GradientTitle>التأهيل الأكاديمي والتدريب المهني</GradientTitle>
             </h2>
-            <p className="mt-3 text-base text-slate-300 max-w-2xl leading-relaxed">
+            <p className="mt-3 text-base text-slate-100 max-w-2xl leading-relaxed">
               تطوير مستمر للمهارات التقنية والتحليلية من خلال برامج تدريبية متخصصة ومعتمدة.
             </p>
           </div>
@@ -357,7 +357,7 @@ export function AboutPageClient() {
                 </div>
               </div>
               <p className="text-sm font-semibold text-teal-200 mt-2">{education[0].school}</p>
-              <p className="text-xs sm:text-sm text-slate-300 mt-3 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-100 mt-3 leading-relaxed">
                 {education[0].details}
               </p>
             </div>
@@ -379,7 +379,7 @@ export function AboutPageClient() {
                     <h4 className="text-sm font-bold text-white group-hover:text-teal-300 transition-colors leading-snug">
                       {cert.split(" — ")[0]}
                     </h4>
-                    <p className="text-xs text-slate-400 mt-2">
+                    <p className="text-xs text-slate-100 mt-2">
                       {cert.split(" — ")[1] || ""}
                     </p>
                   </div>
@@ -424,11 +424,11 @@ export function AboutPageClient() {
                     {exp.company}
                   </p>
 
-                  <p className="mt-3 text-sm text-slate-300 leading-relaxed">
+                  <p className="mt-3 text-sm text-slate-100 leading-relaxed">
                     {exp.summary}
                   </p>
 
-                  <ul className="mt-4 space-y-2 text-xs sm:text-sm text-slate-300 list-disc list-inside">
+                  <ul className="mt-4 space-y-2 text-xs sm:text-sm text-slate-100 list-disc list-inside">
                     {exp.achievements.map((ach) => (
                       <li key={ach}>{ach}</li>
                     ))}
@@ -439,7 +439,7 @@ export function AboutPageClient() {
                   {exp.technologies.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-mono text-slate-300"
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-mono text-slate-100"
                     >
                       {t}
                     </span>
@@ -461,7 +461,7 @@ export function AboutPageClient() {
               مهتم بالفرص المهنية والتعاون في تحليل البيانات ونظم المعلومات
             </h2>
 
-            <p className="mt-4 text-base text-slate-300 max-w-xl leading-relaxed">
+            <p className="mt-4 text-base text-slate-100 max-w-xl leading-relaxed">
               يسعدني التواصل لمناقشة الفرص الوظيفية والمشاريع التقنية ولوحات المعلومات.
             </p>
 

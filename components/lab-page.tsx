@@ -187,7 +187,7 @@ export function LabPageClient() {
             <GradientTitle>Data &amp; Analytics Lab</GradientTitle>
           </h1>
 
-          <p className="mt-4 text-base sm:text-xl text-slate-300 max-w-3xl leading-relaxed">
+          <p className="mt-4 text-base sm:text-xl text-slate-100 max-w-3xl leading-relaxed">
             A real-time evidence hub showcasing dataset scale, BI architecture, verified metrics, and 5-step analytical methodology.
           </p>
 
@@ -208,12 +208,12 @@ export function LabPageClient() {
                       >
                         <Icon className="h-5 w-5" />
                       </div>
-                      <span className="rounded-full border border-white/10 px-2.5 py-0.5 font-mono text-[0.65rem] font-bold text-slate-300">
+                      <span className="rounded-full border border-white/10 px-2.5 py-0.5 font-mono text-[0.65rem] font-bold text-slate-100">
                         {c.tool}
                       </span>
                     </div>
 
-                    <p className="text-[0.68rem] font-mono font-bold uppercase tracking-wider text-slate-400">
+                    <p className="text-[0.68rem] font-mono font-bold uppercase tracking-wider text-slate-100">
                       {c.label}
                     </p>
                     <h2 className="text-xl font-black text-white mt-1 group-hover:text-cyan-300 transition-colors">
@@ -221,7 +221,7 @@ export function LabPageClient() {
                     </h2>
                   </div>
 
-                  <p className="mt-4 pt-3 border-t border-white/10 text-xs text-slate-300 leading-relaxed">
+                  <p className="mt-4 pt-3 border-t border-white/10 text-xs text-slate-100 leading-relaxed">
                     {c.detail}
                   </p>
                 </div>
@@ -258,7 +258,7 @@ export function LabPageClient() {
                         "px-3 py-1 rounded-full text-xs font-mono font-semibold transition-all",
                         activeTool === t
                           ? "bg-cyan-400 text-slate-950 font-bold"
-                          : "bg-white/5 border border-white/10 text-slate-300 hover:text-white"
+                          : "bg-white/5 border border-white/10 text-slate-100 hover:text-white"
                       )}
                     >
                       {t}
@@ -281,7 +281,7 @@ export function LabPageClient() {
                   <button
                     type="button"
                     onClick={() => setSearchQuery("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-100 hover:text-white"
                   >
                     <X className="h-4 w-4" />
                   </button>
@@ -291,7 +291,7 @@ export function LabPageClient() {
               {/* Evidence Table */}
               <div className="overflow-x-auto rounded-2xl border border-white/10 bg-slate-950/70">
                 <table className="w-full text-left text-xs sm:text-sm">
-                  <thead className="bg-white/5 text-slate-300 font-mono text-xs uppercase tracking-wider">
+                  <thead className="bg-white/5 text-slate-100 font-mono text-xs uppercase tracking-wider">
                     <tr>
                       <th className="px-4 py-3">Project Title</th>
                       <th className="px-4 py-3">Tool</th>
@@ -364,7 +364,7 @@ export function LabPageClient() {
                             {s.title}
                           </h3>
                         </div>
-                        <p className="mt-1 text-xs text-slate-300 leading-relaxed">
+                        <p className="mt-1 text-xs text-slate-100 leading-relaxed">
                           {s.desc}
                         </p>
                       </div>
@@ -387,7 +387,7 @@ export function LabPageClient() {
               جاهز لاستعراض محفظة مشاريع أيمن يحيى الشهري؟
             </h2>
 
-            <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-slate-100 max-w-2xl leading-relaxed">
               استكشف دراسات الحالة التفاعلية ومشاريع Power BI المعتمدة، المبنية على مجموعات بيانات تشغيلية واقعية ونمذجة متقدمة.
             </p>
 

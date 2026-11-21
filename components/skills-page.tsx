@@ -94,7 +94,7 @@ export function SkillsPageClient() {
             <GradientTitle>المهارات التقنية وأدوات التحليل</GradientTitle>
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-100 max-w-3xl leading-relaxed">
             منظومة متكاملة تجمع بين ذكاء الأعمال Power BI وExcel المتقدم وقواعد البيانات SQL والبرمجة بلغة Python والتحقق من جودة البيانات.
           </p>
 
@@ -108,7 +108,7 @@ export function SkillsPageClient() {
                 <span className="font-mono text-xs font-bold text-teal-300">01</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">ذكاء الأعمال والتحليل</h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-100 leading-relaxed">
                 تصميم لوحات Power BI التفاعلية، بناء نماذج البيانات، معادلات DAX، وتحويل ومعالجة الجداول عبر Power Query.
               </p>
             </div>
@@ -121,7 +121,7 @@ export function SkillsPageClient() {
                 <span className="font-mono text-xs font-bold text-purple-300">02</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">البرمجة وقواعد البيانات</h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-100 leading-relaxed">
                 استعلام وتجميع البيانات باستخدام SQL، التحليل الاستكشافي والتنظيف بلغة Python، واستخراج الرؤى الرياضية والإحصائية.
               </p>
             </div>
@@ -134,7 +134,7 @@ export function SkillsPageClient() {
                 <span className="font-mono text-xs font-bold text-amber-300">03</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">جودة البيانات والعمليات</h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-100 leading-relaxed">
                 مراجعة السجلات والتحقق من الدقة وتصحيح الأخطاء، دعم العمليات الإدارية، وحل المشكلات التقنية وتوثيق التقارير.
               </p>
             </div>
@@ -160,7 +160,7 @@ export function SkillsPageClient() {
                 <button
                   type="button"
                   onClick={() => setSearchQuery("")}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-100 hover:text-white"
                   aria-label="مسح البحث"
                 >
                   <X className="h-4 w-4" />
@@ -169,7 +169,7 @@ export function SkillsPageClient() {
             </div>
 
             {/* Results Count */}
-            <div className="flex items-center gap-2 text-xs font-mono text-slate-300 px-2 whitespace-nowrap">
+            <div className="flex items-center gap-2 text-xs font-mono text-slate-100 px-2 whitespace-nowrap">
               <Sparkles className="h-3.5 w-3.5 text-teal-300" />
               <span>
                 عرض <strong className="text-teal-300">{filteredSkills.length}</strong> من {skills.length} مهارة
@@ -190,7 +190,7 @@ export function SkillsPageClient() {
                     "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition-all duration-300 shadow-md cursor-pointer",
                     isActive
                       ? "border-teal-400 bg-teal-400 text-slate-950 font-bold shadow-[0_0_15px_rgba(45,212,191,0.4)] scale-105"
-                      : "border-white/10 bg-[#121826]/80 text-slate-300 hover:border-teal-400/40 hover:text-white"
+                      : "border-white/10 bg-[#121826]/80 text-slate-100 hover:border-teal-400/40 hover:text-white"
                   )}
                   aria-pressed={isActive}
                 >
@@ -245,7 +245,7 @@ export function SkillsPageClient() {
                     {/* Progress Bar & Percentage */}
                     <div className="mt-6 space-y-2 pt-4 border-t border-white/10">
                       <div className="flex justify-between items-center text-xs font-mono font-bold">
-                        <span className="text-slate-400">مستوى الإتقان</span>
+                        <span className="text-slate-100">مستوى الإتقان</span>
                         <span className="text-teal-300">{skill.level}%</span>
                       </div>
 

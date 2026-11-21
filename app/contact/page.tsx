@@ -122,7 +122,7 @@ export default function ContactPage() {
             <GradientTitle>تواصل مع أيمن يحيى الشهري</GradientTitle>
           </h1>
 
-          <p className="mt-4 text-base sm:text-xl text-slate-300 max-w-3xl leading-relaxed">
+          <p className="mt-4 text-base sm:text-xl text-slate-100 max-w-3xl leading-relaxed">
             مهتم بتعيين محلل بيانات أو أخصائي ذكاء أعمال؟ هل لديك مشروع لوحة مؤشرات أو استفسار تحليلي؟ يسعدني التواصل معك ومناقشة تفاصيل العمل.
           </p>
 
@@ -131,22 +131,22 @@ export default function ContactPage() {
             <div className="p-4 rounded-2xl border border-cyan-400/30 bg-slate-900/80 backdrop-blur-xl shadow-lg hover:border-cyan-400/60 transition">
               <Zap className="h-5 w-5 text-cyan-400 mb-1" />
               <span className="block text-sm font-extrabold text-white">متاح فوراً</span>
-              <span className="text-xs font-mono text-slate-400">جاهز للتوظيف</span>
+              <span className="text-xs font-mono text-slate-100">جاهز للتوظيف</span>
             </div>
             <div className="p-4 rounded-2xl border border-purple-400/30 bg-slate-900/80 backdrop-blur-xl shadow-lg hover:border-purple-400/60 transition">
               <Clock className="h-5 w-5 text-purple-400 mb-1" />
               <span className="block text-sm font-extrabold text-white">&lt; 24 ساعة</span>
-              <span className="text-xs font-mono text-slate-400">سرعة الرد والمتابعة</span>
+              <span className="text-xs font-mono text-slate-100">سرعة الرد والمتابعة</span>
             </div>
             <div className="p-4 rounded-2xl border border-emerald-400/30 bg-slate-900/80 backdrop-blur-xl shadow-lg hover:border-emerald-400/60 transition">
               <Globe className="h-5 w-5 text-emerald-400 mb-1" />
               <span className="block text-sm font-extrabold text-white">عن بُعد وحضوري</span>
-              <span className="text-xs font-mono text-slate-400">جميع مناطق المملكة</span>
+              <span className="text-xs font-mono text-slate-100">جميع مناطق المملكة</span>
             </div>
             <div className="p-4 rounded-2xl border border-amber-400/30 bg-slate-900/80 backdrop-blur-xl shadow-lg hover:border-amber-400/60 transition">
               <Mail className="h-5 w-5 text-amber-400 mb-1" />
               <span className="block text-sm font-extrabold text-white">البريد المباشر</span>
-              <span className="text-xs font-mono text-slate-400">ayman.y.alshehri</span>
+              <span className="text-xs font-mono text-slate-100">ayman.y.alshehri</span>
             </div>
           </div>
         </section>
@@ -195,7 +195,7 @@ export default function ContactPage() {
                         <Icon className="h-4 w-4" />
                       </div>
                       <div className="overflow-hidden flex-1">
-                        <p className="text-[0.68rem] font-mono uppercase tracking-wider text-slate-400">
+                        <p className="text-[0.68rem] font-mono uppercase tracking-wider text-slate-100">
                           {item.label}
                         </p>
                         <p className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors truncate">
@@ -208,7 +208,7 @@ export default function ContactPage() {
               })}
             </div>
 
-            <div className="pt-4 border-t border-white/10 space-y-2.5 text-xs text-slate-300">
+            <div className="pt-4 border-t border-white/10 space-y-2.5 text-xs text-slate-100">
               <div className="flex items-center gap-2 text-emerald-300">
                 <CheckCircle2 className="h-4 w-4 flex-shrink-0" />
                 <span>Available for Immediate Data Analyst &amp; BI Roles</span>

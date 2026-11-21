@@ -27,7 +27,7 @@ const links = [
   { href: "/", label: "الرئيسية", labelEn: "Home", icon: Home, desc: "نبذة واستعراض المشاريع", descEn: "Overview & Featured Dashboards" },
   { href: "/projects", label: "الأعمال", labelEn: "Projects", icon: BarChart3, desc: "لوحات Power BI التفاعلية", descEn: "Interactive Power BI Dashboards" },
   { href: "/skills", label: "المهارات", labelEn: "Skills", icon: Layers, desc: "Power BI, Excel, SQL, Python", descEn: "Power BI, Excel, SQL, Python" },
-  { href: "/experience", label: "الخبرات", labelEn: "Experience", icon: Briefcase, desc: "رواد الأعمال وبلدية وادي هشبل", descEn: "Field & Analytics Experience" },
+  { href: "/experience", label: "الخبرات", labelEn: "Experience", icon: Briefcase, desc: "رواد الأعمال وبلدية خميس مشيط (360 ساعة)", descEn: "Field & Analytics Experience" },
   { href: "/about", label: "نبذة عني", labelEn: "About", icon: User, desc: "خريج MIS من جامعة طيبة", descEn: "MIS Graduate · Data Analyst" },
   { href: "/resume", label: "المؤهلات", labelEn: "Resume", icon: FileText, desc: "السيرة والشهادات المعتمدة", descEn: "CV & Verified Certifications" },
   { href: "/contact", label: "تواصل معي", labelEn: "Contact", icon: Mail, desc: "بيانات التواصل المباشرة", descEn: "Direct Recruiter Contact" },

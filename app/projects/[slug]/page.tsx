@@ -86,21 +86,21 @@ export default async function ProjectDetailPage({ params }: Props) {
               <div className="p-3.5 rounded-xl border border-white/10 bg-slate-950/60 flex items-start gap-3">
                 <Database className="h-5 w-5 text-cyan-400 shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-[0.7rem] font-mono text-slate-400">نطاق البيانات والمؤشر الأبرز</span>
+                  <span className="block text-[0.7rem] font-mono text-slate-100">نطاق البيانات والمؤشر الأبرز</span>
                   <span className="block text-sm font-bold text-white mt-0.5">{primaryMetric}</span>
                 </div>
               </div>
               <div className="p-3.5 rounded-xl border border-white/10 bg-slate-950/60 flex items-start gap-3">
                 <Wrench className="h-5 w-5 text-purple-400 shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-[0.7rem] font-mono text-slate-400">الأدوات والمنهجية الأساسية</span>
+                  <span className="block text-[0.7rem] font-mono text-slate-100">الأدوات والمنهجية الأساسية</span>
                   <span className="block text-sm font-bold text-white font-mono mt-0.5">{coreTools}</span>
                 </div>
               </div>
               <div className="p-3.5 rounded-xl border border-white/10 bg-slate-950/60 flex items-start gap-3">
                 <Briefcase className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-[0.7rem] font-mono text-slate-400">القرار الإداري المدعوم</span>
+                  <span className="block text-[0.7rem] font-mono text-slate-100">القرار الإداري المدعوم</span>
                   <span className="block text-xs sm:text-sm font-semibold text-emerald-200 mt-0.5 line-clamp-2">
                     {project.impact}
                   </span>
@@ -120,7 +120,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <GradientTitle>{project.title}</GradientTitle>
               </h1>
 
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-100 leading-relaxed">
                 {project.summary}
               </p>
 
@@ -156,7 +156,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <span className="text-xl sm:text-2xl font-black text-teal-300 font-mono">
                   {m.value}
                 </span>
-                <span className="text-xs text-slate-300 mt-1 font-medium">
+                <span className="text-xs text-slate-100 mt-1 font-medium">
                   {m.label}
                 </span>
               </SectionReveal>
@@ -178,7 +178,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <h3 className="text-base font-bold text-white mt-1.5 mb-2">
                   ماذا كانت تعاني الإدارة؟
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-100 leading-relaxed">
                   {project.problem}
                 </p>
               </div>
@@ -190,7 +190,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <h3 className="text-base font-bold text-white mt-1.5 mb-2">
                   كيف تم بناء اللوحة والنموذج؟
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-100 leading-relaxed">
                   {project.approach}
                 </p>
               </div>
@@ -202,7 +202,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <h3 className="text-base font-bold text-white mt-1.5 mb-2">
                   أبرز الأرقام والرؤى المستخلصة
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-100 leading-relaxed">
                   {project.result}
                 </p>
               </div>
@@ -217,7 +217,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <CheckCircle2 className="h-4 w-4" />
                 <h3 className="text-base font-bold text-white">بيانات المشروع والمعالجة (ETL &amp; DAX)</h3>
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-100 leading-relaxed">
                 {project.dataset} — {project.preprocessing}
               </p>
             </SectionReveal>
@@ -227,7 +227,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <Layers className="h-4 w-4" />
                 <h3 className="text-base font-bold text-white">هندسة النموذج والتحقق من الدقة</h3>
               </div>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-100 leading-relaxed">
                 {project.architecture} — {project.evaluation}
               </p>
             </SectionReveal>

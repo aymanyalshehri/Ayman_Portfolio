@@ -59,7 +59,7 @@ export default function ProjectsPage() {
           <GradientTitle>المشاريع ونماذج الأعمال</GradientTitle>
         </h1>
 
-        <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
+        <p className="mt-4 text-base sm:text-lg text-slate-100 max-w-3xl leading-relaxed">
           تصفّح مشروعات Power BI بحسب المجال، أو انتقل مباشرة إلى أي لوحة معلومات. اضغط على أي صورة لمشاهدتها بحجم أكبر مع الحفاظ على الدقة الأصلية.
         </p>
 
@@ -74,7 +74,7 @@ export default function ProjectsPage() {
             </div>
             <div className="mt-3">
               <span className="text-3xl font-black text-white font-mono">{projects.length}</span>
-              <span className="block text-xs text-slate-400 mt-0.5">لوحات Power BI تفاعلية</span>
+              <span className="block text-xs text-slate-100 mt-0.5">لوحات Power BI تفاعلية</span>
             </div>
           </div>
 
@@ -87,7 +87,7 @@ export default function ProjectsPage() {
             </div>
             <div className="mt-3">
               <span className="text-3xl font-black text-white font-mono">8</span>
-              <span className="block text-xs text-slate-400 mt-0.5">مجالات تشغيلية وتجارية</span>
+              <span className="block text-xs text-slate-100 mt-0.5">مجالات تشغيلية وتجارية</span>
             </div>
           </div>
 
@@ -100,7 +100,7 @@ export default function ProjectsPage() {
             </div>
             <div className="mt-3">
               <span className="text-3xl font-black text-white font-mono">185+</span>
-              <span className="block text-xs text-slate-400 mt-0.5">ساعة تدريب تحليل بيانات</span>
+              <span className="block text-xs text-slate-100 mt-0.5">ساعة تدريب تحليل بيانات</span>
             </div>
           </div>
 
@@ -113,7 +113,7 @@ export default function ProjectsPage() {
             </div>
             <div className="mt-3">
               <span className="text-2xl font-black text-white font-mono">DAX &amp; PQ</span>
-              <span className="block text-xs text-slate-400 mt-0.5">Data Modeling &amp; ETL</span>
+              <span className="block text-xs text-slate-100 mt-0.5">Data Modeling &amp; ETL</span>
             </div>
           </div>
         </div>

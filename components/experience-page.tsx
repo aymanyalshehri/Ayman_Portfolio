@@ -89,8 +89,8 @@ export function ExperiencePageClient() {
             <GradientTitle>الخبرات العملية والمسار المهني</GradientTitle>
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
-            مساهمات عملية في تنظيم البيانات وتحديث السجلات، وإعداد التقارير الدورية ولوحات المعلومات التفاعلية في جمعية رواد الأعمال وبلدية وادي هشبل.
+          <p className="mt-4 text-base sm:text-lg text-slate-100 max-w-3xl leading-relaxed">
+            مساهمات عملية في تنظيم البيانات وتحديث السجلات، وإعداد التقارير الدورية ولوحات المعلومات التفاعلية في جمعية رواد الأعمال وبلدية خميس مشيط (360 ساعة).
           </p>
 
           {/* Impact Stats Grid */}
@@ -103,7 +103,7 @@ export function ExperiencePageClient() {
                 <span className="block text-2xl font-black text-teal-300 font-mono">
                   {s.value}
                 </span>
-                <span className="text-xs text-slate-400 mt-1 block">
+                <span className="text-xs text-slate-100 mt-1 block">
                   {s.label}
                 </span>
               </div>
@@ -153,7 +153,7 @@ export function ExperiencePageClient() {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-3">
               <GradientTitle>الخبرات والتكليفات العملية</GradientTitle>
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-slate-300">
+            <p className="mt-2 text-sm sm:text-base text-slate-100">
               أدوار مساندة في تحليل البيانات والدعم الإداري والتقني وإعداد التقارير الدورية.
             </p>
           </div>
@@ -182,12 +182,12 @@ export function ExperiencePageClient() {
                   </span>
                 </div>
 
-                <p className="text-sm text-slate-300 leading-relaxed mb-4">
+                <p className="text-sm text-slate-100 leading-relaxed mb-4">
                   {exp.summary}
                 </p>
 
                 <div className="space-y-2 mb-6">
-                  <p className="text-xs font-mono text-slate-400 font-bold">أبرز المسؤوليات والمهام:</p>
+                  <p className="text-xs font-mono text-slate-100 font-bold">أبرز المسؤوليات والمهام:</p>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-200 list-disc list-inside">
                     {exp.achievements.map((item) => (
                       <li key={item}>{item}</li>
@@ -199,7 +199,7 @@ export function ExperiencePageClient() {
                   {exp.technologies.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-mono text-slate-300"
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-mono text-slate-100"
                     >
                       {t}
                     </span>
@@ -219,7 +219,7 @@ export function ExperiencePageClient() {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-3">
               <GradientTitle>البرامج والدورات التدريبية المعتمدة</GradientTitle>
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-slate-300">
+            <p className="mt-2 text-sm sm:text-base text-slate-100">
               تطوير مستمر للأدوات التقنية والتحليلية عبر معاهد تدريبية رائدة بإجمالي أكثر من 185 ساعة تدريبية.
             </p>
           </div>
@@ -249,7 +249,7 @@ export function ExperiencePageClient() {
                       {title}
                     </h4>
 
-                    <p className="text-xs text-slate-400 mt-2 font-mono">
+                    <p className="text-xs text-slate-100 mt-2 font-mono">
                       {details}
                     </p>
                   </div>
@@ -275,7 +275,7 @@ export function ExperiencePageClient() {
               هل تبحث عن محلل بيانات ونظم معلومات يدعم نمو أعمالك؟
             </h2>
 
-            <p className="mt-4 text-base text-slate-300 max-w-xl leading-relaxed">
+            <p className="mt-4 text-base text-slate-100 max-w-xl leading-relaxed">
               يسعدني تقديم حلول بصرية وتحليلية متقدمة في Power BI وExcel وSQL تسهم في تحسين سير العمل وجودة المتابعة.
             </p>
 

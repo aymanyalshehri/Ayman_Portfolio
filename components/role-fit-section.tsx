@@ -21,7 +21,7 @@ const roles = [
     title: "MIS Analyst / محلل نظم معلومات إدارية",
     icon: MessageSquareText,
     focus: "تحليل العمليات التشغيلية، رقمنة التقارير، وإدارة تدفق البيانات بين الإدارات وأصحاب المصلحة.",
-    proof: "بكالوريوس نظم المعلومات الإدارية (جامعة طيبة) + خبرة عملية في بلدية وادي هشبل وجمعية رواد الأعمال",
+    proof: "بكالوريوس نظم المعلومات الإدارية (جامعة طيبة) + خبرة عملية في بلدية خميس مشيط (360 ساعة) وجمعية رواد الأعمال",
   },
   {
     title: "Business & Reporting Analyst / محلل تقارير أعمال",
@@ -81,7 +81,7 @@ export function RoleFitSection() {
                     <span className="font-mono text-xs uppercase tracking-[.16em] text-slate-500">role fit</span>
                   </div>
                   <h3 className="relative z-10 mt-6 text-2xl font-semibold text-white">{role.title}</h3>
-                  <p className="relative z-10 mt-3 text-sm leading-6 text-slate-300">{role.focus}</p>
+                  <p className="relative z-10 mt-3 text-sm leading-6 text-slate-100">{role.focus}</p>
                   <p className="relative z-10 mt-5 rounded-2xl border border-white/10 bg-black/20 p-3 text-xs leading-6 text-cyan-100">{role.proof}</p>
                 </motion.article>
               </InteractiveTilt>

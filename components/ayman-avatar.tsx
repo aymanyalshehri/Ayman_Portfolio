@@ -101,12 +101,12 @@ export function AymanExecutiveIdentityCard() {
       </div>
 
       {/* Bottom Status Footer */}
-      <div className="relative z-10 w-full pt-3 border-t border-white/10 flex items-center justify-between text-[0.7rem] font-mono text-slate-400">
+      <div className="relative z-10 w-full pt-3 border-t border-white/10 flex items-center justify-between text-[0.7rem] font-mono text-slate-100">
         <span className="flex items-center gap-1.5 text-teal-300">
           <Terminal className="h-3.5 w-3.5" />
           <span>Power BI · SQL · Excel</span>
         </span>
-        <span className="flex items-center gap-1 text-slate-300">
+        <span className="flex items-center gap-1 text-slate-100">
           <Sparkles className="h-3 w-3 text-teal-400" />
           <span>Taibah Univ. (MIS)</span>
         </span>

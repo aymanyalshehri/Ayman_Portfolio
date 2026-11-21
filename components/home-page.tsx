@@ -239,7 +239,7 @@ function HeroSection() {
             </span>
             <span>نمذجة البيانات</span>
           </div>
-          <span className="text-[0.65rem] text-slate-400">Power BI</span>
+          <span className="text-[0.65rem] text-slate-100">Power BI</span>
         </div>
         <p className="text-sm font-extrabold text-white">Power BI • SQL • Excel</p>
         
@@ -291,7 +291,7 @@ function HeroSection() {
         <p className="hero-sub text-lg sm:text-2xl font-bold text-cyan-200 max-w-2xl mt-4 leading-tight drop-shadow-md">
           {t(profile.headline, profile.headlineEn)}
         </p>
-        <p className="text-sm sm:text-base text-slate-300 max-w-2xl mt-3 leading-relaxed drop-shadow-sm">
+        <p className="text-sm sm:text-base text-slate-100 max-w-2xl mt-3 leading-relaxed drop-shadow-sm">
           {t(profile.subtitle, "MIS Graduate from Taibah University combining business acumen and technical analytics (Power BI, SQL, Excel, Python) to turn raw data into executive dashboards and clear decisions.")}
         </p>
 
@@ -308,7 +308,7 @@ function HeroSection() {
           {quickTools.map((tool) => (
             <span
               key={tool}
-              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-mono font-medium text-slate-300 backdrop-blur-sm hover:border-cyan-400/40 hover:text-cyan-300 transition-all"
+              className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-mono font-medium text-slate-100 backdrop-blur-sm hover:border-cyan-400/40 hover:text-cyan-300 transition-all"
             >
               {tool}
             </span>
@@ -338,7 +338,7 @@ function HeroSection() {
                     >
                       <Icon className="h-4 w-4" />
                     </div>
-                    <span className="text-[0.65rem] font-mono font-bold text-slate-400 group-hover:text-white transition-colors">
+                    <span className="text-[0.65rem] font-mono font-bold text-slate-100 group-hover:text-white transition-colors">
                       #{c.step}
                     </span>
                   </div>
@@ -355,7 +355,7 @@ function HeroSection() {
 
                   {/* Label */}
                   <div className="pt-2 border-t border-white/10 text-left">
-                    <span className="text-[0.7rem] font-medium text-slate-300 block">
+                    <span className="text-[0.7rem] font-medium text-slate-100 block">
                       {c.label}
                     </span>
                   </div>
@@ -366,7 +366,7 @@ function HeroSection() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="mt-10 flex flex-col items-center gap-1 text-xs font-mono text-slate-400 animate-bounce">
+        <div className="mt-10 flex flex-col items-center gap-1 text-xs font-mono text-slate-100 animate-bounce">
           <span>Scroll to explore</span>
           <span>↓</span>
         </div>
@@ -408,7 +408,7 @@ function AboutSection() {
             <div className="p-5 sm:p-6 rounded-2xl border-l-4 border-cyan-400 bg-slate-900/70 border border-white/10 backdrop-blur-xl text-base sm:text-lg italic text-slate-200 leading-relaxed shadow-lg">
               &ldquo;أخصائي تحليل بيانات وذكاء أعمال يحول البيانات الخام المشتتة إلى لوحات تحكم تفاعلية وقرارات تشغيلية واستراتيجية واضحة.&rdquo;
             </div>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-100 leading-relaxed">
               {profile.intro}
             </p>
             <div className="pt-2">
@@ -474,7 +474,7 @@ function ProjectsSection() {
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-3">
               <GradientTitle>أبرز مشاريع ولوحات التحكم</GradientTitle>
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            <p className="mt-3 text-base sm:text-lg text-slate-100 max-w-2xl leading-relaxed">
               لوحات تفاعلية معتمدة في Power BI مبنية على بيانات تشغيلية واقعية، توضح المشكلة والحل التحليلي والقيمة المباشرة لمتخذ القرار. اضغط على أي لوحة أو تصفح صفحاتها المصغّرة بالأسفل.
             </p>
           </div>
@@ -547,7 +547,7 @@ function SkillsSection() {
         <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-3">
           <GradientTitle>Skills &amp; Tools</GradientTitle>
         </h2>
-        <p className="mt-3 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+        <p className="mt-3 text-base sm:text-lg text-slate-100 max-w-2xl leading-relaxed">
           A full analytical stack — from raw SQL queries and Python EDA to Power
           BI semantic models and Tableau storytelling.
         </p>
@@ -619,7 +619,7 @@ function ExperienceSection() {
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-3">
               <GradientTitle>Project Experience</GradientTitle>
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            <p className="mt-3 text-base sm:text-lg text-slate-100 max-w-2xl leading-relaxed">
               End-to-end BI projects delivered on real datasets with measurable,
               stakeholder-ready outcomes.
             </p>
@@ -651,11 +651,11 @@ function ExperienceSection() {
                   </span>
                 </div>
 
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-100 leading-relaxed">
                   {exp.summary}
                 </p>
 
-                <ul className="space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed list-disc list-inside">
+                <ul className="space-y-2 text-xs sm:text-sm text-slate-100 leading-relaxed list-disc list-inside">
                   {exp.achievements.map((a) => (
                     <li key={a}>{a}</li>
                   ))}
@@ -665,7 +665,7 @@ function ExperienceSection() {
                   {exp.technologies.map((t) => (
                     <span
                       key={t}
-                      className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-mono text-slate-300"
+                      className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-mono text-slate-100"
                     >
                       {t}
                     </span>
@@ -706,14 +706,14 @@ function EducationSection() {
             <h3 className="text-xl sm:text-2xl font-bold text-white">
               {education[0]?.degree || "بكالوريوس نظم المعلومات الإدارية (MIS)"}
             </h3>
-            <p className="text-sm sm:text-base text-slate-300">
+            <p className="text-sm sm:text-base text-slate-100">
               {education[0]?.school || "جامعة طيبة — كلية إدارة الأعمال"}
             </p>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-100">
               {education[0]?.details || "تخصص يجمع بين علوم الحاسب ونظم المعلومات وإدارة الأعمال والتحليل المؤسسي، والتركيز على قواعد البيانات ونمذجة العمليات ودعم اتخاذ القرار."}
             </p>
           </div>
-          <span className="self-start md:self-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-mono font-medium text-slate-300 whitespace-nowrap">
+          <span className="self-start md:self-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-mono font-medium text-slate-100 whitespace-nowrap">
             {education[0]?.period || "2019 – 2024"}
           </span>
         </div>
@@ -749,7 +749,7 @@ function EducationSection() {
                 </div>
 
                 {certDate && (
-                  <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-400 font-mono">
+                  <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-100 font-mono">
                     <span>جهة الإصدار والمدة</span>
                     <span className="font-semibold text-cyan-300">
                       {certDate}
@@ -780,7 +780,7 @@ function ContactSection() {
             <GradientTitle>تواصل مع أيمن</GradientTitle>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-100 max-w-xl mx-auto leading-relaxed">
             متاح فوراً لفرص العمل في تحليل البيانات وذكاء الأعمال ونظم المعلومات الإدارية، ومستعد للعمل حضورياً وعن بُعد في كافة مناطق المملكة.
           </p>
 
